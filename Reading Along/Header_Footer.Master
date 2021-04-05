@@ -1,0 +1,19 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Header_Footer.master.cs" Inherits="Reading_Along.Header_Footer" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>Reading Along</title>
+    <asp:ContentPlaceHolder ID="Header_Footer_Head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Header_Footer" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="Header_Footer_Body" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
