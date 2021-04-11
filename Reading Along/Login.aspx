@@ -7,7 +7,7 @@
     <title>Reading Along | Login</title>
 	<meta charset="UTF-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
-	<link href="favicon.jpg" rel="shortcut icon" type="image/x-icon" />
+	<link href="favicon.png" rel="shortcut icon" type="image/x-icon" />
 <!--===============================================================================================-->
 	<link rel="stylesheet" type="text/css" href="Design/Authethication/vendor/bootstrap/css/bootstrap.min.css"/>
 	<link rel="stylesheet" type="text/css" href="Design/Authethication/fonts/font-awesome-4.7.0/css/font-awesome.min.css"/>
@@ -66,7 +66,7 @@
 					</div>
 
 					<div class="container-login100-form-btn m-t-17">
-                        <asp:Button ID="btn_Sign_In" class="login100-form-btn" runat="server" Text="Sign In" />
+                        <asp:Button ID="btn_Sign_In" class="login100-form-btn" runat="server" Text="Sign In" OnClick="btn_Sign_In_Click" />
 					</div>
 
 					<div class="w-full text-center p-t-55">
@@ -74,12 +74,12 @@
 							Not a member?
 						</span>
 
-						<a href="#" class="txt2 bo1">
+						<a href="SignUp.aspx" class="txt2 bo1">
 							Sign up now
 						</a>
 					</div>
 					<div class="w-full text-center p-t-15">
-						<a href="#" class="txt2 p-t-15" style="font-size: 2em;">
+						<a href="Index.aspx" class="txt2 p-t-15" style="font-size: 2em;">
 							SKIP >>>
 						</a>
 					</div>

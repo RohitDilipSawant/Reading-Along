@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     	<title>Reading Along | Admin Login</title>
-	<link href="../favicon.jpg" rel="shortcut icon" type="image/x-icon" />
+	<link href="../favicon.png" rel="shortcut icon" type="image/x-icon" />
 	<!--===============================================================================================-->
 		<link rel="stylesheet" type="text/css" href="Admin_Design/Authethication/vendor/bootstrap/css/bootstrap.min.css"/>
 	<!--===============================================================================================-->

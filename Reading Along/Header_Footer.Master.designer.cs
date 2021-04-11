@@ -24,6 +24,51 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Header_Footer_Head;
 
         /// <summary>
+        /// User_name_block control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl User_name_block;
+
+        /// <summary>
+        /// spn_user_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spn_user_name;
+
+        /// <summary>
+        /// lbl_user_name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_user_name;
+
+        /// <summary>
+        /// login_registration_links_block control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl login_registration_links_block;
+
+        /// <summary>
+        /// spn_login_registration_links control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HyperLink spn_login_registration_links;
+
+        /// <summary>
         /// Header_Footer_Body control.
         /// </summary>
         /// <remarks>
@@ -31,5 +76,23 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Header_Footer_Body;
+
+        /// <summary>
+        /// txt_email_news control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_email_news;
+
+        /// <summary>
+        /// btn_Email_Newsletters control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlButton btn_Email_Newsletters;
     }
 }
