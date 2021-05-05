@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Reading_Along.Helper;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
@@ -15,29 +17,54 @@ namespace Reading_Along
         {
             try
             {
-                string strConnString = ConfigurationManager.ConnectionStrings["Reading_Along_DB"].ConnectionString;
-                string str;
-                SqlCommand com;
+                SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
                 User_name_block.Visible = false;
+                user_options.Visible = false;
                 if (Session["User_Login"] != null)
                 {
                     string User_Session = Session["User_Login"].ToString();
-                    SqlConnection con = new SqlConnection(strConnString);
                     con.Open();
-                    str = "select * from User_DB where Email_ID='" + User_Session + "'";
-                    com = new SqlCommand(str, con);
+                    string str = "select * from User_DB where Email_ID='" + User_Session + "'";
+                    SqlCommand com = new SqlCommand(str, con);
                     SqlDataReader reader = com.ExecuteReader();
                     reader.Read();
-                    lbl_user_name.Text = reader["F_Name"].ToString();
+                    lbl_user_name.Text = reader["F_Name"].ToString() + " " + reader["L_Name"].ToString();
                     reader.Close();
                     con.Close();
+                    user_options.Visible = true;
                     login_registration_links_block.Visible = false;
                     User_name_block.Visible = true;
+                    wishlist_bindData();
+
+
+                    con.Open();
+                    SqlCommand qry = new SqlCommand("SELECT COUNT(*) FROM users_whistlist WHERE User_Email='" + User_Session + "';", con);
+                    Int32 get_count_String = (Int32)qry.ExecuteScalar();
+                    wishlist_count_id.InnerText = get_count_String.ToString();
+                    con.Close();
                 }
             }
             catch (Exception ex)
             {
-                Response.Write(ex.Message);
+                Response.Write(ex.Message); 
+            }
+        }
+        SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
+        protected void wishlist_bindData()
+        {
+            try
+            {
+                string User_Session = Session["User_Login"].ToString();
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("Select * from users_whistlist where User_Email='" + User_Session + "';", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                listview_wishlist.DataSource = dt;
+                listview_wishlist.DataBind();
+            }
+            catch (Exception ex)
+            {
             }
         }
     }

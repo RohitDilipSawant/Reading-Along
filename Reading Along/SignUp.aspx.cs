@@ -1,9 +1,13 @@
-﻿using System;
+﻿using Reading_Along.Helper;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
+using System.IO;
 using System.Linq;
 using System.Net.Mail;
+using System.Security.Cryptography;
+using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
@@ -14,45 +18,68 @@ namespace Reading_Along
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["User_Login"] != null)
+            {
+                Response.Redirect("Index.aspx");
+            }
         }
 
         protected void btn_Sign_In_Click(object sender, EventArgs e)
         {
-            string strcon = ConfigurationManager.ConnectionStrings["Reading_Along_DB"].ConnectionString;
             //create new sqlconnection and connection to database by using connection string from web.config file  
-            SqlConnection con = new SqlConnection(strcon);
+            SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
             try
             {
                 string User_Name = txt_User_Name.Text;
                 string First_Name = txt_fname.Text;
                 string Last_Name = txt_lname.Text;
                 string uemail = txt_email.Text;
-                string upass = txt_Pwd.Text;
+                string upass = PasswordHelper.Encrypt(txt_Pwd.Text);
                 string uphone = txt_phone.Text;
+                string OTP_code = Helper.RandomNumberGenerator.getRandomNumber().ToString();
                 con.Open();
-                string qry2 = "select * from User_DB where Email_ID = '" + txt_email + "';";
+                string qry2 = "select * from User_DB where Email_ID = '" + uemail + "';";
                 SqlCommand cmd2 = new SqlCommand(qry2, con);
                 SqlDataReader sdr2 = cmd2.ExecuteReader();
-                con.Close();
                 if (sdr2.Read())
                 {
-                    Response.Write(@"<script language='javascript'>alert('Email Already Exist');</script>");
-                    Response.Write(@"<script language='javascript'>window.open('SignUp.aspx');</script>");
+                    string error_msg = "Email Already Exist..!!!";
+                    lbl_error_msg.Text = error_msg;
+                    con.Close();
                 }
                 else
                 {
-                    try
+                    con.Close();
+                    con.Open();
+                    string retrive_username = "select * from User_DB where Username = '" + User_Name + "';";
+                    SqlCommand cmd_username = new SqlCommand(retrive_username, con);
+                    SqlDataReader read_username = cmd_username.ExecuteReader();
+                    if (read_username.Read())
                     {
-                        con.Open();
-                        string qry1 = "insert into User_DB (Username, Email_ID, F_Name, L_Name, [Password], [Role], Phone_no) Values ('" + User_Name + "','" + uemail + "','" + First_Name + "','" + Last_Name + "','" + upass + "','Coustomer','" + uphone + "');";
-                        SqlCommand cmd1 = new SqlCommand(qry1, con);
-                        SqlDataReader sdr1 = cmd1.ExecuteReader();
+                        string error_msg = "Username Already Exist..!!!";
+                        lbl_error_msg.Text = error_msg;
                         con.Close();
                     }
-                    catch
+                    else
                     {
-                        ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Verification Code not Send Succesfully Send to your Mail ID');", true);
+                        con.Close();
+                        try
+                        {
+                            EmailHealper.SendOtpMail(uemail, OTP_code);
+                            con.Open();
+                            string qry1 = "insert into User_DB (Username, Email_ID, F_Name, L_Name, [Password], [Role], Phone_no, books_access, Verification_Code, Verification_Status) Values ('" + User_Name + "','" + uemail + "','" + First_Name + "','" + Last_Name + "','" + upass + "','Coustomer','" + uphone + "','0','" + OTP_code + "','Pending');";
+                            SqlCommand cmd1 = new SqlCommand(qry1, con);
+                            SqlDataReader sdr1 = cmd1.ExecuteReader();
+                            con.Close();
+                            Session["UserLoginVerify"] = txt_email.Text;
+                            string error_msg = "Verification Mail Succesfully Send..!!!";
+                            lbl_error_msg.Text = error_msg;
+                        }
+                        catch (Exception ex)
+                        {
+                            string error_msg = "Verification Mail was unable to Send..!!!";
+                            lbl_error_msg.Text = error_msg;
+                        }
                     }
                 }
             }

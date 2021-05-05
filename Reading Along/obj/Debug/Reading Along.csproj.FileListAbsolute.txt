@@ -1,4 +1,3 @@
-C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Reading Along.dll.config
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Reading Along.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Reading Along.pdb
@@ -54,21 +53,57 @@ C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\roslyn\VBCSCompi
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Antlr3.Runtime.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\AspNet.ScriptManager.bootstrap.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\AspNet.ScriptManager.jQuery.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.Web.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.ApplicationInsights.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AspNet.FriendlyUrls.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AspNet.TelemetryCorrelation.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AspNet.Web.Optimization.WebForms.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.Configuration.ConfigurationBuilders.Base.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.ScriptManager.MSAjax.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.ScriptManager.WebForms.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Newtonsoft.Json.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Buffers.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Memory.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Numerics.Vectors.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Web.Optimization.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\WebGrease.dll
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.DependencyCollector.pdb
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.PerfCounterCollector.pdb
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.PerfCounterCollector.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.ServerTelemetryChannel.pdb
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.Web.pdb
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.Web.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.WindowsServer.pdb
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.ApplicationInsights.pdb
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.Configuration.ConfigurationBuilders.Base.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.Configuration.ConfigurationBuilders.UserSecrets.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Buffers.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Memory.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Numerics.Vectors.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\System.Web.Optimization.xml
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Newtonsoft.Json.xml
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Antlr3.Runtime.pdb
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.dll
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.pdb
-C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csprojAssemblyReference.cache

@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="Reading_Along_DB-Web.config Connection String" description="Reading_Along_DB Connection String used in web.config by the application to access the database." defaultValue="Server=tcp:ra-prod-sql.database.windows.net,1433;Initial Catalog=reading_Along;Persist Security Info=False;User ID=RN_Project;Password=Earn@123;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\Admin\\Documents\\GitHub\\Reading\ Along\\Reading\ Along\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='Reading_Along_DB']/@connectionString" />
+  </parameter>
+</parameters>

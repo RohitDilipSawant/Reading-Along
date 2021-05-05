@@ -33,22 +33,13 @@ namespace Reading_Along
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl User_name_block;
 
         /// <summary>
-        /// spn_user_name control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl spn_user_name;
-
-        /// <summary>
         /// lbl_user_name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lbl_user_name;
+        protected global::System.Web.UI.WebControls.HyperLink lbl_user_name;
 
         /// <summary>
         /// login_registration_links_block control.
@@ -67,6 +58,33 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HyperLink spn_login_registration_links;
+
+        /// <summary>
+        /// wishlist_count_id control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wishlist_count_id;
+
+        /// <summary>
+        /// listview_wishlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView listview_wishlist;
+
+        /// <summary>
+        /// user_options control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl user_options;
 
         /// <summary>
         /// Header_Footer_Body control.

@@ -24,6 +24,15 @@ namespace Reading_Along
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+        /// txt_User_Name control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_User_Name;
+
+        /// <summary>
         /// txt_fname control.
         /// </summary>
         /// <remarks>
@@ -42,13 +51,13 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.TextBox txt_lname;
 
         /// <summary>
-        /// txt_User_Name control.
+        /// txt_email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_User_Name;
+        protected global::System.Web.UI.WebControls.TextBox txt_email;
 
         /// <summary>
         /// txt_phone control.
@@ -58,15 +67,6 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_phone;
-
-        /// <summary>
-        /// txt_email control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_email;
 
         /// <summary>
         /// txt_Pwd control.
@@ -94,6 +94,15 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CompareValidator cmp_pwd;
+
+        /// <summary>
+        /// lbl_error_msg control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lbl_error_msg;
 
         /// <summary>
         /// btn_Sign_In control.

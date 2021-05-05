@@ -1,0 +1,45 @@
+{
+  "dependencies": {
+    "appInsights1": {
+      "restored": true,
+      "restoreTime": "2021-04-24T14:27:35.2062161Z"
+    }
+  },
+  "parameters": {
+    "ra-prod-webapp.resourceName": {
+      "Name": "ra-prod-webapp.resourceName",
+      "Type": null,
+      "Value": "ra-prod-webapp"
+    },
+    "ra-prod-webapp.resourceGroupLocation": {
+      "Name": "ra-prod-webapp.resourceGroupLocation",
+      "Type": null,
+      "Value": "centralindia"
+    },
+    "appInsights1.subscriptionId": {
+      "Name": "appInsights1.subscriptionId",
+      "Type": "subscription",
+      "Value": "b516893b-c082-493a-9a73-765b069e5c1b"
+    },
+    "appInsights1.resourceGroupName": {
+      "Name": "appInsights1.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "ra-prod-rg"
+    },
+    "ra-prod-webapp.resourceGroupName": {
+      "Name": "ra-prod-webapp.resourceGroupName",
+      "Type": "resourceGroup",
+      "Value": "ra-prod-rg"
+    },
+    "ra-prod-webapp.subscriptionId": {
+      "Name": "ra-prod-webapp.subscriptionId",
+      "Type": "subscription",
+      "Value": "b516893b-c082-493a-9a73-765b069e5c1b"
+    },
+    "subscriptionId": {
+      "Name": "subscriptionId",
+      "Type": "subscription",
+      "Value": "b516893b-c082-493a-9a73-765b069e5c1b"
+    }
+  }
+}
