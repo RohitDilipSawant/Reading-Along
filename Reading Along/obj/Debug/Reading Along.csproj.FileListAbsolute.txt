@@ -102,6 +102,7 @@ C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Newtonsoft.Json.
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Antlr3.Runtime.pdb
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.AspNet.FriendlyUrls.xml
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csprojAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\Reading Along\Reading Along\obj\Debug\Reading Along.dll

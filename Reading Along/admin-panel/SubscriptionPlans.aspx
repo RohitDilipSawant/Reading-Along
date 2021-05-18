@@ -36,7 +36,7 @@
                 <div class="col-10">
                   <h3 class="text-white mb-0">All Subscription Plans</h3>
                 </div>
-                <div class="col-1 text-left">
+                <div class="col-2 text-right">
                     <asp:Button ID="btn_add_SubscriptionPlans" runat="server" class="btn btn-sm btn-primary" Text="Add New Plan" OnClick="btn_add_SubscriptionPlans_Click"/>
                 </div>
               </div>

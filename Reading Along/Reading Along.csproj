@@ -2785,10 +2785,6 @@
     <Content Include="Design\main\js\vendor\bootstrap.min.js" />
     <Content Include="Design\main\js\vendor\jquery-library.js" />
     <Content Include="Design\main\js\vendor\modernizr-2.8.3-respond-1.4.2.min.js" />
-    <Content Include="Design\preloader-files\css\main.css" />
-    <Content Include="Design\preloader-files\js\main.js" />
-    <Content Include="Design\preloader-files\js\vendor\jquery-1.9.1.min.js" />
-    <Content Include="Design\preloader-files\js\vendor\modernizr-2.6.2.min.js" />
     <Content Include="Design\pricing\bootstrap.css" />
     <Content Include="Design\pricing\font-awesome.css" />
     <Content Include="Design\pricing\style.css" />
