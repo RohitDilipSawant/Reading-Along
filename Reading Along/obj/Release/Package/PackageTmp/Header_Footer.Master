@@ -20,11 +20,7 @@
 	<link rel="stylesheet" href="design/main/css/color.css">
 	<link rel="stylesheet" href="design/main/css/responsive.css">
 	<script src="design/main/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
-	<style>
-	 #Pk7SUnm-1619518200853{
-		 display:none;
-	 }
-	</style>
+
 	<style>
 		/* Center the loader */
 		#pre-loader {
@@ -50,6 +46,37 @@
 		  0% { transform: rotate(0deg); }
 		  100% { transform: rotate(360deg); }
 		}
+	</style>
+	<style>
+	 #btn_Email_Newsletter {
+			top: 0;
+			right: 0;
+			z-index: 2;
+			width: 50px;
+			height: 50px;
+			font-size: 16px;
+			line-height: 50px;
+			position: absolute;
+			background: transparent;
+		}
+		#btn_Email_Newsletter {
+			border: none;
+		}
+		#btn_Email_Newsletter {
+			-webkit-appearance: button;
+			cursor: pointer;
+		}
+		#btn_Email_Newsletter {
+			text-transform: none;
+		}
+		#btn_Email_Newsletter {
+			overflow: visible;
+		}
+	    #btn_Email_Newsletter {
+	        color: inherit;
+	        font: inherit;
+	        margin: 0;
+	    }
 	</style>
     <asp:ContentPlaceHolder ID="Header_Footer_Head" runat="server">
     </asp:ContentPlaceHolder>
@@ -93,7 +120,7 @@
 				<div class="container">
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-							<strong class="tg-logo"><a href="Index.aspx"><img src="images/logo.png" alt="company name here"></a></strong>
+							<strong class="tg-logo"><a href="Index.aspx"><img src="images/logo_main.png" alt="company name here"></a></strong>
 							<div class="tg-wishlistandcart">
 								<div class="dropdown tg-themedropdown tg-wishlistdropdown">
 									<a href="javascript:void(0);" id="tg-wishlisst" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -783,7 +810,7 @@
 										<li><a href="Index.aspx">Home</a></li>
 										<li><a href="aboutus.aspx">About Us</a></li>
 										<li><a href="authors.aspx">Authors</a></li>
-										<li><a href="books.aspx">All Books</a></li>
+										<li><a href="AllBooks.aspx">All Books</a></li>
 										<li><a href="pricing.aspx">Our Pricing</a></li>
 										<li><a href="contactus.aspx">Contact</a></li>
 										<li id="user_options" class="menu-item-has-children current-menu-item" runat="server">
@@ -849,7 +876,7 @@
 						<div class="tg-threecolumns">
 							<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
 								<div class="tg-footercol">
-									<strong class="tg-logo"><a href="javascript:void(0);"><img src="images/flogo.png" alt="image description"></a></strong>
+									<strong class="tg-logo"><a href="javascript:void(0);"><img src="images/logo_main_footer.png" alt="image description"></a></strong>
 									<ul class="tg-contactinfo">
 										<li>
 											<i class="icon-apartment"></i>
@@ -956,7 +983,8 @@
 							<div class="tg-formtheme tg-formnewsletter">
 								<fieldset>
                                     <asp:TextBox ID="txt_email_news" type="email" name="email" class="form-control" placeholder="Enter Your Email ID" runat="server"></asp:TextBox>
-									<button runat="server" id="btn_Email_Newsletters" type="button"><i class="icon-envelope"></i></button>
+                                    <asp:Button ID="btn_Email_Newsletter" runat="server" Text="Send" OnClick="btn_Email_Newsletter_Click" style="border-left: 1px solid;"/>
+									<%--<button runat="server" id="" type="button" OnClick="btn_Email_Newsletters_Click"><i class="icon-envelope"></i></button>--%>
 								</fieldset>
 							</div>
 						</div>

@@ -32,7 +32,7 @@ namespace Reading_Along
                 SqlCommand com = new SqlCommand(str, con);
                 SqlDataReader reader = com.ExecuteReader();
                 reader.Read();
-                img_book_cover.ImageUrl = reader["Book_Cover_Page"].ToString();
+                img_book_cover.ImageUrl = "../BooksStorage/BookCover/" + reader["Book_Cover_Page"].ToString();
                 reader.Close();
 
                 if (dt.Rows.Count <= 0) {

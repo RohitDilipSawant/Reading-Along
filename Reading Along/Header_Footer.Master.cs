@@ -20,6 +20,12 @@ namespace Reading_Along
                 SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
                 User_name_block.Visible = false;
                 user_options.Visible = false;
+
+                if (Request.QueryString["Send_Newsletter_Email"] != "send")
+                {
+                    
+                }
+
                 if (Session["User_Login"] != null)
                 {
                     string User_Session = Session["User_Login"].ToString();
@@ -66,6 +72,17 @@ namespace Reading_Along
             catch (Exception ex)
             {
             }
+        }
+
+        protected void btn_Email_Newsletter_Click(object sender, EventArgs e)
+        {
+            string Newsletter_email = txt_email_news.Text;
+            con.Open();
+            string str = "INSERT INTO Email_Newsletter (Email_ID) VALUES ('" + Newsletter_email + "');";
+            SqlCommand com = new SqlCommand(str, con);
+            SqlDataReader reader = com.ExecuteReader();
+            con.Close();
+            Response.Redirect("Index.aspx");
         }
     }
 }

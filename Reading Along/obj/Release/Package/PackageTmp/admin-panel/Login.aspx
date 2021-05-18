@@ -6,6 +6,7 @@
 <head runat="server">
     	<title>Reading Along | Admin Login</title>
 	<link href="../favicon.png" rel="shortcut icon" type="image/x-icon" />
+	  <link rel="apple-touch-icon" href="../favicon.png"/>
 	<!--===============================================================================================-->
 		<link rel="stylesheet" type="text/css" href="Admin_Design/Authethication/vendor/bootstrap/css/bootstrap.min.css"/>
 	<!--===============================================================================================-->
@@ -16,7 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="Admin_Design/Authethication/css/util.css"/>
 		<link rel="stylesheet" type="text/css" href="Admin_Design/Authethication/css/main.css"/>
 	<!--===============================================================================================-->
-	<style>
+	<style>	
 	 #btn_Admin_Login:hover{
 		 cursor : pointer;
 	 }
@@ -24,9 +25,9 @@
 </head>
 <body>
     <form id="form1" runat="server">
-                <div class="limiter">
+	<div class="limiter">
 		<div class="container-login100">
-			<div class="wrap-login100">
+			<div class="wrap-login100" style="padding: 60px 55px 60px 55px;">
 				<div class="login100-form validate-form">
 					<span class="login100-form-title p-b-26">
 						Welcome
@@ -36,8 +37,8 @@
 					</span>
 
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is: a@b.c">
-						<asp:TextBox ID="txt_Uname" class="input100" type="text" name="username" runat="server"></asp:TextBox>
-						<span class="focus-input100" data-placeholder="Email"></span>
+						<asp:TextBox ID="txt_Uname" class="input100" type="text" name="Username" runat="server"></asp:TextBox>
+						<span class="focus-input100" data-placeholder="Username"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
@@ -53,16 +54,6 @@
 							<div class="login100-form-bgbtn"></div>
                             <asp:Button ID="btn_Admin_Login" class="login100-form-btn" Style="background-color : #000;" runat="server" Text="Log In" OnClick="btn_Admin_Login_Click" />
 						</div>
-					</div>
-
-					<div class="text-center p-t-115">
-						<span class="txt1">
-							Don’t have an account?
-						</span>
-
-						<a class="txt2" href="#">
-							Sign Up
-						</a>
 					</div>
 				</div>
 			</div>

@@ -105,12 +105,12 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.TextBox txt_email_news;
 
         /// <summary>
-        /// btn_Email_Newsletters control.
+        /// btn_Email_Newsletter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlButton btn_Email_Newsletters;
+        protected global::System.Web.UI.WebControls.Button btn_Email_Newsletter;
     }
 }

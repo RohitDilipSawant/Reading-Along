@@ -65,19 +65,23 @@ namespace Reading_Along
                         con.Close();
                         try
                         {
-                            EmailHealper.SendOtpMail(uemail, OTP_code);
+                            //EmailHealper.SendOtpMail(uemail, OTP_code);
                             con.Open();
-                            string qry1 = "insert into User_DB (Username, Email_ID, F_Name, L_Name, [Password], [Role], Phone_no, books_access, Verification_Code, Verification_Status) Values ('" + User_Name + "','" + uemail + "','" + First_Name + "','" + Last_Name + "','" + upass + "','Coustomer','" + uphone + "','0','" + OTP_code + "','Pending');";
+                            string qry1 = "insert into User_DB (Username, Email_ID, F_Name, L_Name, [Password], [Role], Phone_no, books_access, Verification_Code, Verification_Status) Values ('" + User_Name + "','" + uemail + "','" + First_Name + "','" + Last_Name + "','" + upass + "','Coustomer','" + uphone + "','0','" + OTP_code + "','Verified');";
                             SqlCommand cmd1 = new SqlCommand(qry1, con);
                             SqlDataReader sdr1 = cmd1.ExecuteReader();
                             con.Close();
-                            Session["UserLoginVerify"] = txt_email.Text;
-                            string error_msg = "Verification Mail Succesfully Send..!!!";
-                            lbl_error_msg.Text = error_msg;
+                            Session["User_Login"] = txt_email.Text;
+                            //Session["UserLoginVerify"] = txt_email.Text;
+                            //string error_msg = "Verification Mail Succesfully Send..!!!";
+                            string error_msg = "Succesfully Sign Up..!!!";
+                            Response.Write(@"<script language='javascript'>alert('"+ error_msg + "');</script>");
+                            Response.Write(@"<script language='javascript'>window.open('Index.aspx','_self');</script>");
                         }
                         catch (Exception ex)
                         {
-                            string error_msg = "Verification Mail was unable to Send..!!!";
+                            //string error_msg = "Verification Mail was unable to Send..!!!";
+                            string error_msg = "Something went wrong..!!!";
                             lbl_error_msg.Text = error_msg;
                         }
                     }

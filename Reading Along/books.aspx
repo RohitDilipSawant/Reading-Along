@@ -15,10 +15,10 @@
                 <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
                         <div class="tg-innerbannercontent">
-                            <h1>All Products</h1>
+                            <h1>All Books</h1>
                             <ol class="tg-breadcrumb">
                                 <li><a href="javascript:void(0);">home</a></li>
-                                <li class="tg-active">Products</li>
+                                <li class="tg-active">Books</li>
                             </ol>
                         </div>
                     </div>
@@ -36,7 +36,7 @@
                     News Grid Start
             *************************************-->
             <div class="tg-sectionspace tg-haslayout">
-                <div class="container">
+                <div class="container" style ="width: 90%;">
                     <div class="row">
                         <div id="tg-twocolumns" class="tg-twocolumns">
                             <div class="col-xs-12 col-sm-8 col-md-8 col-lg-9 pull-right">
@@ -84,23 +84,10 @@
                                                     <fieldset>
                                                         <div class="form-group">
                                                             <label>sort by:</label>
-                                                            <span class="tg-select">
-                                                                <select>
-                                                                    <option>name</option>
-                                                                    <option>name</option>
-                                                                    <option>name</option>
-                                                                </select>
-                                                            </span>
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>show:</label>
-                                                            <span class="tg-select">
-                                                                <select>
-                                                                    <option>8</option>
-                                                                    <option>16</option>
-                                                                    <option>20</option>
-                                                                </select>
-                                                            </span>
+                                                            <asp:DropDownList ID="drp_short_by" class="tg-select" runat="server">
+                                                                <asp:ListItem Value="Book_Short_Name">Name</asp:ListItem>
+                                                                <asp:ListItem Value="Book_Author">Author</asp:ListItem>
+                                                            </asp:DropDownList>
                                                         </div>
                                                     </fieldset>
                                                 </div>
@@ -111,8 +98,8 @@
                                                         <div class="tg-postbook">
                                                             <figure class="tg-featureimg">
                                                                 <div class="tg-bookimg">
-                                                                    <div class="tg-frontcover"><img src="<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
-                                                                    <div class="tg-backcover"><img src="<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
+                                                                    <div class="tg-frontcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
+                                                                    <div class="tg-backcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
                                                                 </div>
                                                                 <a class="tg-btnaddtowishlist" href="<%# Eval("ID", "books.aspx?addwishlist_ID={0}") %>">
                                                                     <i class="icon-heart"></i>
@@ -125,11 +112,11 @@
                                                                 </ul>
                                                                 <span class="tg-themetag">Recommended</span>
                                                                 <div class="tg-booktitle">
-                                                                    <h4><a href="<%# Eval("ID", "BooksDetails.aspx?Book_ID={0}") %>"><%# Eval("Book_Short_Name") %>...</a></h4>
+                                                                    <h4><a href="<%# Eval("ID", "BooksDetails.aspx?Book_ID={0}") %>"><%# (Eval("Book_Name").ToString().Length > 20) ? (Eval("Book_Name").ToString().Substring(0, 20) + "...") : Eval("Book_Name")%>...</a></h4>
                                                                     <span class="tg-bookwriter">By: <a href="javascript:void(0);"><%# Eval("Book_Author") %></a></span>
                                                                 </div>
-                                                                <span class="tg-stars"><span></span></span>
-                                                                <a class="tg-btn tg-btnstyletwo" href="<%# Eval("ID", "BooksDetails.aspx?Book_ID={0}") %>">
+                                                                
+                                                                <a class="tg-btn tg-btnstyletwo" href="<%# Eval("ID", "BookRead.aspx?view_book_ID={0}") %>">
                                                                     <i class="fa fa-book"></i>
                                                                     <em>Read Now</em>
                                                                 </a>

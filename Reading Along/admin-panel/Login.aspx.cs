@@ -12,8 +12,11 @@ namespace Reading_Along.Admin_Panel
 	{
 		protected void Page_Load(object sender, EventArgs e)
 		{
-
-		}
+            if (Session["Admin_Login"] != null)
+            {
+                Response.Redirect("Dashboard.aspx");
+            }
+        }
         SqlConnection con = new SqlConnection(System.Configuration.ConfigurationManager.ConnectionStrings["Reading_Along_DB"].ConnectionString);
         protected void btn_Admin_Login_Click(object sender, EventArgs e)
         {

@@ -83,7 +83,7 @@
 								</span>
 							</div>
 							<div class="wrap-input100 validate-input" data-validate = "Username is required">
-								<asp:TextBox ID="txt_email" class="input100" textmode="Email" name="email" MaxLength="80" placeholder="xyz@domain.com" runat="server" ></asp:TextBox>
+								<asp:TextBox ID="txt_email" class="input100" textmode="Email" name="email" MaxLength="80" placeholder="xyz@domain.com" runat="server" required="required"></asp:TextBox>
 						<span class="focus-input100"></span>
 							</div>
 						</div>

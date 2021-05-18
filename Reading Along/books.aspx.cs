@@ -16,7 +16,6 @@ namespace Reading_Along
         {
             
             SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
-            
             if (Request.QueryString["addwishlist_ID"] != null)
             {
                 if (Session["User_Login"] == null)
