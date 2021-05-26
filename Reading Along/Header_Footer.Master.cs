@@ -20,7 +20,7 @@ namespace Reading_Along
                 SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
                 User_name_block.Visible = false;
                 user_options.Visible = false;
-
+                bindauthorData();
                 if (Request.QueryString["Send_Newsletter_Email"] != "send")
                 {
                     
@@ -41,7 +41,6 @@ namespace Reading_Along
                     login_registration_links_block.Visible = false;
                     User_name_block.Visible = true;
                     wishlist_bindData();
-
 
                     con.Open();
                     SqlCommand qry = new SqlCommand("SELECT COUNT(*) FROM users_whistlist WHERE User_Email='" + User_Session + "';", con);
@@ -73,7 +72,22 @@ namespace Reading_Along
             {
             }
         }
-
+        protected void bindauthorData()
+        {
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT Top 3 * FROM Authors_DB;", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                rpr_top_author.DataSource = dt;
+                rpr_top_author.DataBind();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
         protected void btn_Email_Newsletter_Click(object sender, EventArgs e)
         {
             string Newsletter_email = txt_email_news.Text;
@@ -82,7 +96,7 @@ namespace Reading_Along
             SqlCommand com = new SqlCommand(str, con);
             SqlDataReader reader = com.ExecuteReader();
             con.Close();
-            Response.Redirect("Index.aspx");
+            txt_email_news.Text = "";
         }
     }
 }

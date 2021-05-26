@@ -41,7 +41,7 @@
 										<h4><span class="feature" style="font-size : 28px;"><%# Eval("NoOfBooksAccess") %></span></h4>
 										<h4><span class="feature">No Of Days</span> : <span class="value"><%# Eval("NoOfDays") %></span></h4>
 									</div>
-									<button class="btn btn-block btn-outline-primary" type="submit">Signup Now</button>
+									<a href="SignUp.aspx" class="btn btn-block btn-outline-primary" style="background: #4dbe3b; color: #fff;" type="submit">Signup Now</a>
 								</div>
 							</div>
 						</ItemTemplate>
@@ -62,14 +62,14 @@
 										<h3><%# Eval("SubscriptionName") %></h3>
 									</div>
 									<div class="price">
-										<h4><sup>₹</sup><%# Eval("SubscriptionPrice") %><sub>/Mo</sub></h4>
+										<h4><sup>₹</sup><%# Eval("SubscriptionPrice") %><sub>/MOS</sub></h4>
 									</div>
 									<p class="prising_heading_p"><%# Eval("SubscriptionDescription") %></p>
 									<div class="features">
 										<h4><span class="feature">No Of Books</span> : <span class="value"><%# Eval("NoOfBooksAccess") %></span></h4>
 										<h4><span class="feature">No Of Days</span> : <span class="value"><%# Eval("NoOfDays") %></span></h4>
 									</div>
-									<button class="btn btn-block btn-outline-primary" type="submit">BUY NOW</button>
+									<a href="<%# Eval("ID", "pricing.aspx?subscribe_monthly_plan_ID={0}") %>" class="btn btn-block btn-outline-primary" style="background: #4dbe3b; color: #fff;" type="submit">Select</a>
 								</div>
 							</div>
 						</ItemTemplate>
@@ -90,14 +90,14 @@
 									<h3><%# Eval("SubscriptionName") %></h3>
 								</div>
 								<div class="price">
-									<h4><sup>₹</sup><%# Eval("SubscriptionPrice") %><sub>/Qt</sub></h4>
+									<h4><sup>₹</sup><%# Eval("SubscriptionPrice") %><sub>/QTR</sub></h4>
 								</div>
 								<p class="prising_heading_p"><%# Eval("SubscriptionDescription") %></p>
 								<div class="features">
 									<h4><span class="feature">No Of Books</span> : <span class="value"><%# Eval("NoOfBooksAccess") %></span></h4>
 									<h4><span class="feature">No Of Days</span> : <span class="value"><%# Eval("NoOfDays") %></span></h4>
 								</div>
-								<button class="btn btn-block btn-outline-primary" type="submit">BUY NOW</button>
+								<a href="<%# Eval("ID", "pricing.aspx?subscribe_monthly_plan_ID={0}") %>" class="btn btn-block btn-outline-primary" style="background: #4dbe3b; color: #fff;" type="submit">Select</a>
 							</div>
 						</div>
 					</ItemTemplate>
@@ -118,7 +118,7 @@
 										<h3><%# Eval("SubscriptionName") %></h3>
 									</div>
 									<div class="price" style="text-align : center;">
-										<h4 style="margin-bottom : 0px;"><sup>₹</sup><%# Eval("SubscriptionPrice") %><sub>/Yr</sub></h4>
+										<h4 style="margin-bottom : 0px;"><sup>₹</sup><%# Eval("SubscriptionPrice") %><sub>/YRS</sub></h4>
 										<h5><del>600</del></h5>
 									</div>
 									<p class="prising_heading_p"><%# Eval("SubscriptionDescription") %></p>
@@ -126,7 +126,7 @@
 										<h4><span class="feature">No Of Books</span> : <span class="value"><%# Eval("NoOfBooksAccess") %></span></h4>
 										<h4><span class="feature">No Of Days</span> : <span class="value"><%# Eval("NoOfDays") %></span></h4>
 									</div>
-									<button class="btn btn-block btn-outline-primary" type="submit">BUY NOW</button>
+									<a href="<%# Eval("ID", "pricing.aspx?subscribe_monthly_plan_ID={0}") %>" class="btn btn-block btn-outline-primary" style="background: #4dbe3b; color: #fff;" type="submit">Select</a>
 								</div>
 							</div>
 						</ItemTemplate>

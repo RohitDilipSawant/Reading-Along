@@ -222,11 +222,15 @@
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-first-name">Book Author</label>
-                          <asp:TextBox ID="txt_add_book_author" class="form-control" placeholder="Book Author" ValidationGroup="AddBookValidationGroup" runat="server"></asp:TextBox>
+                          <asp:DropDownList ID="drp_add_book_author" class="form-control" placeholder="Book Author" ValidationGroup="AddBookValidationGroup" runat="server" DataSourceID="Sqldrpaddauthorinbook" DataTextField="Author_Name" DataValueField="Author_Name">
+                              <asp:ListItem Selected="True">==Select==</asp:ListItem>
+                          </asp:DropDownList>
+                          <asp:SqlDataSource runat="server" ID="Sqldrpaddauthorinbook" ConnectionString='<%$ ConnectionStrings:Reading_Along_DB %>' SelectCommand="SELECT [Author_Name] FROM [Authors_DB] ORDER BY [Author_Name]"></asp:SqlDataSource>
                           <asp:requiredfieldvalidator id="Requiredfieldvalidator3"
-                              controltovalidate="txt_add_book_author"
+                              controltovalidate="drp_add_book_author"
                               validationgroup="AddBookValidationGroup"
-                              errormessage="Author Name is required."
+                              errormessage="Author Name is required." 
+                              InitialValue="==Select=="
                               class="validation_class"
                               runat="Server">
                             </asp:requiredfieldvalidator>
@@ -371,34 +375,42 @@
                 </div>
                 <hr class="my-4" />
                 <!-- Description -->
-                <%--<h6 class="heading-small text-muted mb-4">Admin Secssion</h6>--%>
-                <%--<div class="pl-lg-4">
+                <h6 class="heading-small text-muted mb-4">Admin Secssion</h6>
+                <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-4">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-first-name"><b>Update Verification Status : </b><span id="Span1" runat="server"></span></label>
-                          <asp:DropDownList ID="drp_" class="form-control" runat="server">
-                              <asp:ListItem Value="0">-- Select your City--</asp:ListItem>  
-                              <asp:ListItem>Pending</asp:ListItem>
-                              <asp:ListItem>Verified</asp:ListItem>
+                        <label class="form-control-label" for="input-first-name"><b>Product Listing : </b><span id="Span1" runat="server"></span></label>
+                          <asp:DropDownList ID="drp_listing" class="form-control" validationgroup="AddBookValidationGroup" runat="server">
+                              <asp:ListItem Value="0">-- Select --</asp:ListItem>  
+                              <asp:ListItem>Recommended</asp:ListItem>
+                              <asp:ListItem>Most Read</asp:ListItem>
+                              <asp:ListItem>Author Picks</asp:ListItem>
                           </asp:DropDownList>
-                          <asp:TextBox ID="txt_status" class="form-control" placeholder="Status" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator12"
+                              controltovalidate="drp_listing"
+                              validationgroup="AddBookValidationGroup"
+                              errormessage="Product Listing is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
                       </div>
                     </div>
                     <div class="col-lg-4">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-first-name">Update Subscription</label>
-                        <asp:TextBox ID="TextBox12" class="form-control" placeholder="Subscription" ReadOnly="true" runat="server"></asp:TextBox>
-                      </div>
-                    </div>
-                    <div class="col-lg-4">
-                      <div class="form-group">
-                        <label class="form-control-label" for="input-first-name">Total Book Access</label>
-                          <asp:TextBox ID="TextBox13" class="form-control" placeholder="Books Access" runat="server" ReadOnly="true"></asp:TextBox>
+                        <label class="form-control-label" for="input-first-name">Tags (Comma "," Saperated)</label>
+                        <asp:TextBox ID="txt_tags" class="form-control" placeholder="Subscription" MaxLength="50" validationgroup="AddBookValidationGroup" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator13"
+                              controltovalidate="txt_tags"
+                              validationgroup="AddBookValidationGroup"
+                              errormessage="Tags are required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
                       </div>
                     </div>
                   </div>
-                </div>--%>
+                </div>
                   <asp:Button ID="btn_add_book_details" class="btn btn-primary" style="float: right;" validationgroup="AddBookValidationGroup" runat="server" Text="Save" OnClick="btn_add_book_details_Click"/>                                                     
               </div>
             </div>

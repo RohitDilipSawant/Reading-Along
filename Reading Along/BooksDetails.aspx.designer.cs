@@ -15,13 +15,13 @@ namespace Reading_Along
     {
 
         /// <summary>
-        /// img_book_cover control.
+        /// rpr_book_details control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img_book_cover;
+        protected global::System.Web.UI.WebControls.Repeater rpr_book_details;
 
         /// <summary>
         /// datalist_book_details control.
@@ -31,5 +31,32 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DataList datalist_book_details;
+
+        /// <summary>
+        /// rpr_description control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpr_description;
+
+        /// <summary>
+        /// rpr_author_details control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpr_author_details;
+
+        /// <summary>
+        /// rpr_relatedbooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpr_relatedbooks;
     }
 }

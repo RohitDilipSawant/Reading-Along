@@ -48,23 +48,28 @@
 								<div id="tg-content" class="tg-content">
 									<div class="tg-productdetail" style="text-align: left;">
 										<div class="row">
-											<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
-												<div class="tg-postbook">
-													<figure class="tg-featureimg">
-                                                        <asp:Image ID="img_book_cover" runat="server" alt="image description" /></figure>
-													<div class="tg-postbookcontent">
-														<span class="tg-bookwriter">Digital Copy</span>
-														<ul class="tg-delevrystock">
-															<li><i class="icon-rocket"></i><span>Adds Free</span></li>
-															<li><i class="icon-checkmark-circle"></i><span>Available </span></li>
-														</ul>
-														<a class="tg-btn tg-active tg-btn-lg" href="javascript:void(0);">Read Now</a>
-														<a class="tg-btnaddtowishlist" href="<%# Eval("ID", "AllBooks.aspx?addwishlist_ID={0}") %>">
-															<span>add to wishlist</span>
-														</a>
+                                            <asp:Repeater ID="rpr_book_details" runat="server">
+												<ItemTemplate>
+													<div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+														<div class="tg-postbook">
+															<figure class="tg-featureimg">
+																<img ID="img_book_cover" src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" />
+															</figure>
+															<div class="tg-postbookcontent">
+																<span class="tg-bookwriter">Digital Copy</span>
+																<ul class="tg-delevrystock">
+																	<li><i class="icon-rocket"></i><span>Adds Free</span></li>
+																	<li><i class="icon-checkmark-circle"></i><span>Available </span></li>
+																</ul>
+																<a class="tg-btn tg-active tg-btn-lg" href="javascript:void(0);">Read Now</a>
+																<a class="tg-btnaddtowishlist" href="<%# Eval("ID", "AllBooks.aspx?addwishlist_ID={0}") %>">
+																	<span>add to wishlist</span>
+																</a>
+															</div>
+														</div>
 													</div>
-												</div>
-											</div>
+												</ItemTemplate>
+                                            </asp:Repeater>
 											<div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 												<asp:DataList ID="datalist_book_details" runat="server" RepeatDirection="Horizontal">
 													<ItemTemplate>
@@ -108,7 +113,9 @@
 												</asp:DataList>
 											</div>
 											<div class="tg-productdescription" style="margin-top : 4em;" id="book_details">
-												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                <asp:Repeater ID="rpr_description" runat="server">
+													<ItemTemplate>
+														<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 													<div class="tg-sectionhead">
 														<h2>Product Description</h2>
 													</div>
@@ -118,30 +125,31 @@
 													<div class="tg-tab-content tab-content">
 														<div role="tabpanel" class="tg-tab-pane tab-pane active" id="description">
 															<div class="tg-description">
-																<p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veni quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenden
-voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-																<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam remmata aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enimsam
-voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos quistatoa.</p>
+																<p><%# Eval("Book_Description") %></p>
 															</div>
 														</div>
 													</div>
 												</div>
+													</ItemTemplate>
+                                                </asp:Repeater>
 											</div>
 											<div class="tg-aboutauthor">
 												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 													<div class="tg-sectionhead">
 														<h2>About Author</h2>
 													</div>
-													<div class="tg-authorbox">
+                                                    <asp:Repeater ID="rpr_author_details" runat="server">
+														<ItemTemplate>
+															<div class="tg-authorbox">
 														<figure class="tg-authorimg">
-															<img src="images/author/imag-08.jpg" alt="image description">
+															<img src="../BooksStorage/AuthorStorage/AuthorProfilePicture/<%# Eval("Author_Picture") %>" style="max-height : 100px; max-width : 100px;" alt="image description">
 														</figure>
 														<div class="tg-authorinfo">
 															<div class="tg-authorhead">
 																<div class="tg-leftarea">
 																	<div class="tg-authorname">
-																		<h2>Kathrine Culbertson</h2>
-																		<span>Author Since: June 27, 2017</span>
+																		<h2><%# Eval("Author_Name") %></h2>
+																		<span>Author Since: <%# Eval("Author_Since") %></span>
 																	</div>
 																</div>
 																<%--<div class="tg-rightarea">
@@ -154,58 +162,59 @@ voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntu
 																	</ul>
 																</div>--%>
 															</div>
-															<div class="tg-description">
+															<%--<div class="tg-description">
 																<p>Laborum sed ut perspiciatis unde omnis iste natus sit voluptatem accusantium doloremque laudantium totam rem aperiam eaque ipsa quae ab illo inventore veritatis etation.</p>
 															</div>
-															<%--<a class="tg-btn tg-active" href="javascript:void(0);">View All Books</a>--%>
+															<a class="tg-btn tg-active" href="javascript:void(0);">View All Books</a>--%>
 														</div>
 													</div>
+														</ItemTemplate>
+                                                    </asp:Repeater>
 												</div>
 											</div>
 											<div class="tg-relatedproducts">
 												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 													<div class="tg-sectionhead">
 														<h2><span>Related Products</span>You May Also Like</h2>
-														<a class="tg-btn" href="javascript:void(0);">View All</a>
+														<a class="tg-btn" href="AllBooks.aspx">View All</a>
 													</div>
 												</div>
 												<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 													<div id="tg-relatedproductslider" class="tg-relatedproductslider tg-relatedbooks owl-carousel">
-														<div class="item">
+                                                        <asp:Repeater ID="rpr_relatedbooks" runat="server">
+															<ItemTemplate>
+																<div class="item">
 															<div class="tg-postbook">
 																<figure class="tg-featureimg">
 																	<div class="tg-bookimg">
-																		<div class="tg-frontcover"><img src="images/books/img-01.jpg" alt="image description"></div>
-																		<div class="tg-backcover"><img src="images/books/img-01.jpg" alt="image description"></div>
+																		<div class="tg-frontcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
+																		<div class="tg-backcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
 																	</div>
-																	<a class="tg-btnaddtowishlist" href="javascript:void(0);">
+																	<a class="tg-btnaddtowishlist" href="<%# Eval("ID", "AllBooks.aspx?addwishlist_ID={0}") %>">
 																		<i class="icon-heart"></i>
 																		<span>add to wishlist</span>
 																	</a>
 																</figure>
 																<div class="tg-postbookcontent">
 																	<ul class="tg-bookscategories">
-																		<li><a href="javascript:void(0);">Adventure</a></li>
-																		<li><a href="javascript:void(0);">Fun</a></li>
+																		<li><a href="javascript:void(0);"><%# Eval("Book_Category") %></a></li>
+																		<li><a href="javascript:void(0);"><%# Eval("Book_Sub_Category") %></a></li>
 																	</ul>
 																	<div class="tg-themetagbox"><span class="tg-themetag">sale</span></div>
 																	<div class="tg-booktitle">
-																		<h3><a href="javascript:void(0);">Help Me Find My Stomach</a></h3>
+																		<h3><a href="<%# Eval("ID", "BooksDetails.aspx?Book_ID={0}") %>"><%# (Eval("Book_Name").ToString().Length > 20) ? (Eval("Book_Name").ToString().Substring(0, 20) + "...") : Eval("Book_Name")%>...</a></h3>
 																	</div>
-																	<span class="tg-bookwriter">By: <a href="javascript:void(0);">Angela Gunning</a></span>
-																	<span class="tg-stars"><span></span></span>
-																	<span class="tg-bookprice">
-																		<ins>$25.18</ins>
-																		<del>$27.20</del>
-																	</span>
-																	<a class="tg-btn tg-btnstyletwo" href="javascript:void(0);">
-																		<i class="fa fa-shopping-basket"></i>
-																		<em>Add To Basket</em>
+																	<span class="tg-bookwriter">By: <a href="javascript:void(0);"><%# (Eval("Book_Author").ToString().Length > 20) ? (Eval("Book_Author").ToString().Substring(0, 20) + "...") : Eval("Book_Author")%></a></span>
+																	<a class="tg-btn tg-btnstyletwo" href="<%# Eval("ID", "BookRead.aspx?view_book_ID={0}") %>">
+																		<i class="fa fa-book"></i>
+																		<em>Read Now</em>
 																	</a>
 																</div>
 															</div>
 														</div>
-														<div class="item">
+															</ItemTemplate>
+                                                        </asp:Repeater>
+														<%--<div class="item">
 															<div class="tg-postbook">
 																<figure class="tg-featureimg">
 																	<div class="tg-bookimg">
@@ -408,7 +417,7 @@ voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntu
 																	</a>
 																</div>
 															</div>
-														</div>
+														</div>--%>
 													</div>
 												</div>
 											</div>

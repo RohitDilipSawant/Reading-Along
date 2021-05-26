@@ -15,6 +15,7 @@ namespace Reading_Along
         protected void Page_Load(object sender, EventArgs e)
         {
             SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
+
             if (Request.QueryString["addwishlist_ID"] != null)
             {
                 if (Session["User_Login"] == null)
@@ -81,7 +82,7 @@ namespace Reading_Along
                 else
                 {
                     string User_get_Email = Session["User_Login"].ToString();
-                    string remove_Book_get_ID = Request.QueryString["remove_wishlist_Book_ID"].ToString();
+                    string remove_Book_get_ID = Request.QueryString["removeallwishlistBookID"].ToString();
                     con.Open();
                     string str = "DELETE FROM users_whistlist WHERE User_Email='" + User_get_Email + "';";
                     SqlCommand com = new SqlCommand(str, con);
@@ -91,6 +92,38 @@ namespace Reading_Along
                 }
             }
             bindData();
+            bindtopcategoryData();
+            if (Request.QueryString["FilterCategory"] != null)
+            {
+                try
+                {
+                    string get_category_ID = Request.QueryString["FilterCategory"].ToString();
+                    con.Open();
+                    string str = "select * from [categories_db] where ID='" + get_category_ID + "'";
+                    SqlCommand com = new SqlCommand(str, con);
+                    SqlDataReader reader = com.ExecuteReader();
+                    reader.Read();
+                    string get_Category_name = reader["Category"].ToString();
+                    reader.Close();
+                    con.Close();
+
+                    con.Open();
+                    SqlDataAdapter da = new SqlDataAdapter("Select * from Books_DB where Book_Category = '" + get_Category_name + "' order by Book_Name ASC;", con);
+                    DataTable dt = new DataTable();
+                    da.Fill(dt);
+                    con.Close();
+                    datalist_all_book.DataSource = dt;
+                    datalist_all_book.DataBind();
+                }
+                catch (Exception ex)
+                {
+                }
+            }
+            if (Request.QueryString["ViewAllCategory"] == "all")
+            {
+                bindcategoryData();
+                viewAllCategory_lnk.Visible = false;
+            }
         }
         SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
         protected void bindData()
@@ -105,6 +138,38 @@ namespace Reading_Along
                 con.Close();
                 datalist_all_book.DataSource = dt;
                 datalist_all_book.DataBind();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        protected void bindtopcategoryData()
+        {
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select TOP 10 * from [categories_db] order by Category ASC;", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                rpr_category.DataSource = dt;
+                rpr_category.DataBind();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        protected void bindcategoryData()
+        {
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select * from [categories_db] order by Category ASC;", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                rpr_category.DataSource = dt;
+                rpr_category.DataBind();
             }
             catch (Exception ex)
             {

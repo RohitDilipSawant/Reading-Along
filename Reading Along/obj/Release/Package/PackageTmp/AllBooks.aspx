@@ -64,7 +64,7 @@
                                                                 </span>
                                                                 <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
                                                                     <i class="fa fa-book"></i>
-                                                                    <em>Add To Basket</em>
+                                                                    <em>Just an ADD</em>
                                                                 </a>
                                                             </div>
                                                         </div>
@@ -105,6 +105,7 @@
                                                             <div class="tg-postbookcontent">
                                                                 <ul class="tg-bookscategories">
                                                                     <li><a href="javascript:void(0);"><%# Eval("Book_Category") %></a></li>
+                                                                    <li><a href="javascript:void(0);"><%# Eval("Book_Sub_Category") %></a></li>
                                                                 </ul>
                                                                 <span class="tg-themetag">Recommended</span>
                                                                 <div class="tg-booktitle">
@@ -128,31 +129,26 @@
                             </div>
                             <div class="col-xs-12 col-sm-4 col-md-4 col-lg-3 pull-left">
                                 <aside id="tg-sidebar" class="tg-sidebar">
-                                    <div class="tg-widget tg-widgetsearch">
+                                    <%--<div class="tg-widget tg-widgetsearch">
                                         <div class="tg-formtheme tg-formsearch">
                                             <div class="form-group">
                                                 <button type="submit"><i class="icon-magnifier"></i></button>
                                                 <input type="search" name="search" class="form-group" placeholder="Search by title, author, key...">
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>--%>
                                     <div class="tg-widget tg-catagories">
                                         <div class="tg-widgettitle">
                                             <h3>Categories</h3>
                                         </div>
                                         <div class="tg-widgetcontent">
                                             <ul>
-                                                <li><a href="javascript:void(0);"><span>Art &amp; Photography</span><em>28245</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Biography</span><em>4856</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Children’s Book</span><em>8654</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Craft &amp; Hobbies</span><em>6247</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Crime &amp; Thriller</span><em>888654</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Fantasy &amp; Horror</span><em>873144</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Fiction</span><em>18465</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Fod &amp; Drink</span><em>3148</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Graphic, Anime &amp; Manga</span><em>77531</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>Science Fiction</span><em>9247</em></a></li>
-                                                <li><a href="javascript:void(0);"><span>View All</span></a></li>
+                                                <asp:Repeater ID="rpr_category" runat="server">
+                                                    <ItemTemplate>
+                                                        <li><a href="<%# Eval("ID", "AllBooks.aspx?FilterCategory={0}") %>"><span><%# Eval("Category") %></span><%--<em>28245</em>--%></a></li>
+                                                    </ItemTemplate>
+                                                </asp:Repeater>
+                                                <li id="viewAllCategory_lnk" runat="server" visible="true"><a href="AllBooks.aspx?ViewAllCategory=all"><span>View All</span></a></li>
                                             </ul>
                                         </div>
                                     </div>

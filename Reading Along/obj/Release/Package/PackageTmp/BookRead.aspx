@@ -22,7 +22,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <iframe id="Book_Frame" runat="server" class="frameSize" title="book"></iframe>
+        <iframe id="Book_Frame" runat="server" class="frameSize" title="Read Book"></iframe>
     </form>
 </body>
 </html>

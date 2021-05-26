@@ -96,6 +96,15 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Header_Footer_Body;
 
         /// <summary>
+        /// rpr_top_author control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpr_top_author;
+
+        /// <summary>
         /// txt_email_news control.
         /// </summary>
         /// <remarks>
@@ -112,5 +121,14 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btn_Email_Newsletter;
+
+        /// <summary>
+        /// reqemail_newsletter control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqemail_newsletter;
     }
 }

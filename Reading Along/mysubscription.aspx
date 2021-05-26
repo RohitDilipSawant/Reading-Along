@@ -10,7 +10,6 @@
 			border-bottom: solid 2px #77b748; 
 			width: 40%;
 		}
-
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="Header_Footer_Body" runat="server">
@@ -29,18 +28,18 @@
 						<div class="item">
 							<div class="ribbon">Your Plan</div>
 							<div class="heading">
-								<h3>PRO</h3>
+								<h3 id="subscription_name_label" runat="server">Plan</h3>
 							</div>
 							<div class="price">
-								<h4><sup>₹</sup>50<sub>/Mo</sub></h4>
+								<h4><sup>₹</sup><span id="sub_price" runat="server">50</span><sub id="sub_period" runat="server">/Mo</sub></h4>
 							</div>
-							<p class="prising_heading_p">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+							<p class="prising_heading_p">You are subscribed enjoy!!!</p>
 							<div class="features">
-								<h4><span class="feature">Full Support</span> : <span class="value">Yes</span></h4>
-								<h4><span class="feature">Duration</span> : <span class="value">60 Days</span></h4>
-								<h4><span class="feature">Storage</span> : <span class="value">50GB</span></h4>
+								<h4><span class="feature">Accessible Books</span> : <span id="accessible_book_count" class="value" runat="server"></span></h4>
+								<h4><span class="feature">Validity</span> : <span id="validity_days" class="value" runat="server"></span></h4>
+								<h4><span class="feature">Purchase Date</span> : <span id="purchase_date" class="value" runat="server"></span></h4>
+								<h4><span class="feature">Expiry Date</span> : <span id="validity_date" class="value" runat="server"></span></h4>
 							</div>
-							<button class="btn btn-block btn-primary" type="submit">BUY NOW</button>
 						</div>
 					</div>
 					<div class="col-md-5 col-lg-4">

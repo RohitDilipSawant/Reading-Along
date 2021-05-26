@@ -49,8 +49,15 @@ namespace Reading_Along
                         lbl_designation.Text = reader["User_Designation"].ToString();
                         lbl_qulification.Text = reader["User_Qulification"].ToString();
                         lbl_books_access.Text = reader["books_access"].ToString();
+                        string start_User_Subscription_Date = reader["User_Subscription_Date"].ToString();
+                        string start_User_Subscription_validity_Date = reader["User_Subscription_validity_Date"].ToString();
                         reader.Close();
                         con.Close();
+                        string start_User_Subscription_Date_str = DateTime.Now.ToString("yyyy/MM/dd");
+                        DateTime start_date = Convert.ToDateTime(start_User_Subscription_Date_str);
+                        DateTime end_date = Convert.ToDateTime(start_User_Subscription_validity_Date);
+                        double valid_days = (end_date - start_date).TotalDays;
+                        user_book_count.InnerText = valid_days.ToString();
                         img_profile.ImageUrl = randomProfileGenerator.getProfileGenerator().ToString();
                     }
                 }

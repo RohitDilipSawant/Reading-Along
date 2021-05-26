@@ -36,7 +36,7 @@
                 <div class="col-10">
                   <h3 class="text-white mb-0">All Subscription Plans</h3>
                 </div>
-                <div class="col-1 text-left">
+                <div class="col-2 text-right">
                     <asp:Button ID="btn_add_SubscriptionPlans" runat="server" class="btn btn-sm btn-primary" Text="Add New Plan" OnClick="btn_add_SubscriptionPlans_Click"/>
                 </div>
               </div>
@@ -49,6 +49,7 @@
                     <th scope="col" class="sort" data-sort="name">Accessible Books</th>
                     <th scope="col" class="sort" data-sort="name">Validity</th>
                     <th scope="col" class="sort" data-sort="name">Type</th>
+                    <th scope="col" class="sort" data-sort="name">Status</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -67,6 +68,7 @@
                             <td><%# Eval("NoOfBooksAccess") %></td>
                             <td><%# Eval("NoOfDays") %></td>
                             <td><%# Eval("SubscriptionType") %></td>
+                            <td><%# Eval("plan_status") %></td>
                             <td class="text-right">
                               <div class="dropdown">
                                 <a class="btn btn-sm btn-icon-only text-light" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -74,7 +76,8 @@
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
                                   <a class="dropdown-item" href="<%# Eval("ID", "SubscriptionPlans.aspx?edit_SubscriptionPlans_ID={0}") %>">View / Edit Plans</a>
-                                  <a class="dropdown-item" href="<%# Eval("ID", "SubscriptionPlans.aspx?remove_SubscriptionPlans_ID={0}") %>">Delete</a>
+                                  <a class="dropdown-item" href="<%# Eval("ID", "SubscriptionPlans.aspx?Active_SubscriptionPlans_ID={0}") %>">En-List</a>
+                                  <a class="dropdown-item" href="<%# Eval("ID", "SubscriptionPlans.aspx?Deactive_SubscriptionPlans_ID={0}") %>">De-List</a>
                                 </div>
                               </div>
                             </td>
@@ -180,8 +183,8 @@
                   <div class="row">
                     <div class="col-lg-4">
                       <div class="form-group">
-                        <label class="form-control-label" for="input-username">No Of Accesible Books</label>
-                        <asp:TextBox ID="txt_add_Accesible_Books" MaxLength="150" class="form-control" ValidationGroup="AddSubscriptionValidationGroup" placeholder="Enter Subscription Name" runat="server"></asp:TextBox>
+                        <label class="form-control-label" for="input-username">No. Of Accesible Books</label>
+                        <asp:TextBox ID="txt_add_Accesible_Books" MaxLength="150" class="form-control" ValidationGroup="AddSubscriptionValidationGroup" placeholder="Enter No. Of Accesible Books" runat="server"></asp:TextBox>
                           <asp:requiredfieldvalidator id="Requiredfieldvalidator3"
                               controltovalidate="txt_add_Accesible_Books"
                               validationgroup="AddSubscriptionValidationGroup"
@@ -210,7 +213,7 @@
                           <asp:DropDownList ID="drp_subscription_tag" validationgroup="AddSubscriptionValidationGroup" class="form-control" runat="server">
                               <asp:ListItem>--Select--</asp:ListItem>
                               <asp:ListItem>Best Selling</asp:ListItem>
-                              <asp:ListItem>Most Recommended</asp:ListItem>
+                              <asp:ListItem>Recommended</asp:ListItem>
                               <asp:ListItem>Best Value</asp:ListItem>
                           </asp:DropDownList>
                           <asp:requiredfieldvalidator id="Requiredfieldvalidator5"

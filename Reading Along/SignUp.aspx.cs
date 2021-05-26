@@ -67,7 +67,21 @@ namespace Reading_Along
                         {
                             //EmailHealper.SendOtpMail(uemail, OTP_code);
                             con.Open();
-                            string qry1 = "insert into User_DB (Username, Email_ID, F_Name, L_Name, [Password], [Role], Phone_no, books_access, Verification_Code, Verification_Status) Values ('" + User_Name + "','" + uemail + "','" + First_Name + "','" + Last_Name + "','" + upass + "','Coustomer','" + uphone + "','0','" + OTP_code + "','Verified');";
+                            string get_sub_detail_str = "select * from SubscriptionPlans_DB where [SubscriptionType] = 'Free'";
+                            SqlCommand get_sub_detail_com = new SqlCommand(get_sub_detail_str, con);
+                            SqlDataReader get_sub_detail_reader = get_sub_detail_com.ExecuteReader();
+                            get_sub_detail_reader.Read();
+                            string get_sub_ID = get_sub_detail_reader["ID"].ToString();
+                            string get_sub_name = get_sub_detail_reader["SubscriptionName"].ToString();
+                            string get_accesiblebooks_sub = get_sub_detail_reader["NoOfBooksAccess"].ToString();
+                            int get_NoOfDays_sub = Convert.ToInt32(get_sub_detail_reader["NoOfDays"]);
+                            get_sub_detail_reader.Close();
+                            con.Close();
+                            string get_present_Date = DateTime.Now.ToString("yyyy/MM/dd");
+                            string get_User_Subscription_validity_Date = DateTime.Today.AddDays(get_NoOfDays_sub).ToString("yyyy/MM/dd");
+                            con.Open();
+                            string qry1 = "insert into User_DB (Username, Email_ID, F_Name, L_Name, [Password], [Role], Phone_no, books_access, Verification_Code, Verification_Status,[User_Subscription],[User_Subscription_ID],[User_Subscription_accesible_book],[User_Subscription_validity_Date],[User_Subscription_Date]) Values " +
+                                "('" + User_Name + "','" + uemail + "','" + First_Name + "','" + Last_Name + "','" + upass + "','Coustomer','" + uphone + "','0','" + OTP_code + "','Verified','"+ get_sub_name + "','"+ get_sub_ID + "','"+ get_accesiblebooks_sub + "','"+ get_User_Subscription_validity_Date + "','"+ get_present_Date + "');";
                             SqlCommand cmd1 = new SqlCommand(qry1, con);
                             SqlDataReader sdr1 = cmd1.ExecuteReader();
                             con.Close();

@@ -14,11 +14,21 @@ namespace Reading_Along.admin_panel
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Request.QueryString["remove_SubscriptionPlans_ID"] != null)
+            if (Request.QueryString["Deactive_SubscriptionPlans_ID"] != null)
             {
-                string remove_SubscriptionPlans_get_ID = Request.QueryString["remove_SubscriptionPlans_ID"].ToString();
+                string Deactive_SubscriptionPlans_get_ID = Request.QueryString["Deactive_SubscriptionPlans_ID"].ToString();
                 con.Open();
-                string str = "DELETE FROM SubscriptionPlans_DB WHERE ID ='" + remove_SubscriptionPlans_get_ID + "';";
+                string str = "UPDATE[SubscriptionPlans_DB] SET[plan_status] = 'Deactive' WHERE ID = '" + Deactive_SubscriptionPlans_get_ID + "';";
+                SqlCommand com = new SqlCommand(str, con);
+                SqlDataReader reader = com.ExecuteReader();
+                con.Close();
+                Response.Redirect("SubscriptionPlans.aspx");
+            }
+            if (Request.QueryString["Active_SubscriptionPlans_ID"] != null)
+            {
+                string Active_SubscriptionPlans_get_ID = Request.QueryString["Active_SubscriptionPlans_ID"].ToString();
+                con.Open();
+                string str = "UPDATE[SubscriptionPlans_DB] SET[plan_status] = 'Active' WHERE ID = '" + Active_SubscriptionPlans_get_ID + "';";
                 SqlCommand com = new SqlCommand(str, con);
                 SqlDataReader reader = com.ExecuteReader();
                 con.Close();
@@ -66,8 +76,8 @@ namespace Reading_Along.admin_panel
             string get_drp_subscription_tag = drp_subscription_tag.SelectedValue;
             string get_drp_Subscription_Type = drp_Subscription_Type.SelectedValue;
             con.Open();
-            string str = "INSERT INTO SubscriptionPlans_DB ([SubscriptionName],[SubscriptionPrice],[SubscriptionDescription],[NoOfBooksAccess],[NoOfDays],[tags],[SubscriptionType]) " +
-                "VALUES ('"+ get_txt_add_Subscription_Name + "','"+ get_txt_add_Subscription_Price + "','"+ get_txt_add_Subscription_Description + "','"+ get_txt_add_Accesible_Books + "','"+ get_txt_add_validity + "','"+ get_drp_subscription_tag + "','"+ get_drp_Subscription_Type + "');";
+            string str = "INSERT INTO SubscriptionPlans_DB ([SubscriptionName],[SubscriptionPrice],[SubscriptionDescription],[NoOfBooksAccess],[NoOfDays],[tags],[SubscriptionType],[plan_status]) " +
+                "VALUES ('"+ get_txt_add_Subscription_Name + "','"+ get_txt_add_Subscription_Price + "','"+ get_txt_add_Subscription_Description + "','"+ get_txt_add_Accesible_Books + "','"+ get_txt_add_validity + "','"+ get_drp_subscription_tag + "','"+ get_drp_Subscription_Type + "','Active');";
             SqlCommand com = new SqlCommand(str, con);
             SqlDataReader reader = com.ExecuteReader();
             con.Close();

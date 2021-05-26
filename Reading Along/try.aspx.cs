@@ -14,67 +14,18 @@ namespace Reading_Along
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            DateTime todays_date = Convert.ToDateTime(DateTime.Now.ToString("yyyy/MM/dd"));
+            DateTime selected_date = Convert.ToDateTime(DateTime.Now.ToString("2021/06/09"));
+            if (todays_date > selected_date) 
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Subscription Expired!!!');location.href='Index.aspx';", true);
+            }
+            if (todays_date < selected_date)
+            {
+                ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Subscription Valid!!!');location.href='Index.aspx';", true);
+            }
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                bool chkfile = false;
-                int imgSize = FileUpload1.PostedFile.ContentLength;
-                string ext = System.IO.Path.GetExtension(this.FileUpload1.PostedFile.FileName);
-                if (FileUpload1.PostedFile.ContentLength > 1000000)
-                {
-                    chkfile = false;
-                    Image1.Visible = false;
-                    Label1.Visible = false;
-                    Label1.Text = "";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('File is too big.');", true);
-                    return;
-                }
-                else
-                {
-                    chkfile = true;
-                }
-                if (ext == ".pdf")
-                {
-                    chkfile = true;
-                }
-                else
-                {
-                    chkfile = false;
-                    Image1.Visible = false;
-                    Label1.Visible = false;
-                    Label1.Text = "";
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Please choose only .pdf types!');", true);
-                    return;
-                }
-
-                if (FileUpload1.PostedFile != null && FileUpload1.PostedFile.FileName != "" && chkfile == true)
-                {
-                    string fileName = Path.GetFileName(FileUpload1.PostedFile.FileName);
-
-                    string fileSave = DateTime.Now.ToString("dd_MM_yyyy_HH_MM_ss_").ToString() + fileName;
-                    FileUpload1.PostedFile.SaveAs(Server.MapPath("../tryStorage/") + fileSave);
-
-                    System.IO.Stream fs = FileUpload1.PostedFile.InputStream;
-                    System.IO.BinaryReader br = new System.IO.BinaryReader(fs);
-                    Byte[] bytes = br.ReadBytes((Int32)fs.Length);
-                    string base64String = Convert.ToBase64String(bytes, 0, bytes.Length);
-                    Image1.ImageUrl = "data:image/png;base64," + base64String;
-                    Image1.Visible = true;
-                    Label1.Visible = true;
-                    Label1.Text = fileSave;
-                }
-                else
-                {
-                    ClientScript.RegisterStartupScript(this.GetType(), "myalert", "alert('Please Upload Image');", true);
-                }
-            }
-            catch (Exception ex)
-            {
-            }
-        }
     }
 }

@@ -18,6 +18,29 @@ namespace Reading_Along
             {
                 div_list.Visible = false;
             }
+            if (Request.QueryString["subscribe_monthly_plan_ID"] != null)
+            {
+                if (Session["User_Login"] != null)
+                {
+                    string get_subscribe_monthly_plan_ID = Request.QueryString["subscribe_monthly_plan_ID"].ToString();
+                    con.Open();
+                    string str = "SELECT * FROM [dbo].[SubscriptionPlans_DB] where ID='" + get_subscribe_monthly_plan_ID + "';";
+                    SqlCommand com = new SqlCommand(str, con);
+                    SqlDataReader reader = com.ExecuteReader();
+                    reader.Read();
+                    string subscription_plan_name = reader["SubscriptionName"].ToString();
+                    string subscription_plan_price = reader["SubscriptionPrice"].ToString();
+                    reader.Close();
+                    con.Close();
+                    Session["user_subscription"] = get_subscribe_monthly_plan_ID;
+                    Response.Redirect("checkout.aspx?SubPlanID=" + get_subscribe_monthly_plan_ID + "&SubPlanName=" + subscription_plan_name + "&SubPlanPrice=" + subscription_plan_price);
+                }
+                else
+                {
+                    Response.Write(@"<script language='javascript'>alert('Please Sign In!!!');</script>");
+                    Response.Write(@"<script language='javascript'>window.open('Login.aspx','_self');</script>");
+                }
+            }
             free_bindData();
             monthly_bindData();
             quater_bindData();
@@ -44,7 +67,7 @@ namespace Reading_Along
             try
             {
                 con.Open();
-                string str = "Select * from SubscriptionPlans_DB where SubscriptionType = 'Monthly';";
+                string str = "Select * from SubscriptionPlans_DB where SubscriptionType = 'Monthly' AND plan_status = 'Active';";
                 SqlCommand com = new SqlCommand(str, con);
                 list_monthly_plan.DataSource = com.ExecuteReader();
                 list_monthly_plan.DataBind();
@@ -59,7 +82,7 @@ namespace Reading_Along
             try
             {
                 con.Open();
-                string str = "Select * from SubscriptionPlans_DB where SubscriptionType = 'Quarterly';";
+                string str = "Select * from SubscriptionPlans_DB where SubscriptionType = 'Quarterly' AND plan_status = 'Active';";
                 SqlCommand com = new SqlCommand(str, con);
                 list_quater_plan.DataSource = com.ExecuteReader();
                 list_quater_plan.DataBind();
@@ -74,7 +97,7 @@ namespace Reading_Along
             try
             {
                 con.Open();
-                string str = "Select * from SubscriptionPlans_DB where SubscriptionType = 'Yearly';";
+                string str = "Select * from SubscriptionPlans_DB where SubscriptionType = 'Yearly' AND plan_status = 'Active';";
                 SqlCommand com = new SqlCommand(str, con);
                 list_yearly_plan.DataSource = com.ExecuteReader();
                 list_yearly_plan.DataBind();

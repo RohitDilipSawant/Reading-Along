@@ -60,7 +60,7 @@
                       <span class="description">Books Access</span>
                     </div>
                     <div>
-                      <span class="heading">89</span>
+                      <span class="heading" id="user_book_count" runat="server"></span>
                       <span class="description">Days Remaining</span>
                     </div>
                   </div>

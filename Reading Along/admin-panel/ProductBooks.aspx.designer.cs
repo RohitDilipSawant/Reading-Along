@@ -204,13 +204,22 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator1;
 
         /// <summary>
-        /// txt_add_book_author control.
+        /// drp_add_book_author control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_add_book_author;
+        protected global::System.Web.UI.WebControls.DropDownList drp_add_book_author;
+
+        /// <summary>
+        /// Sqldrpaddauthorinbook control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.SqlDataSource Sqldrpaddauthorinbook;
 
         /// <summary>
         /// Requiredfieldvalidator3 control.
@@ -391,6 +400,51 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator10;
+
+        /// <summary>
+        /// Span1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Span1;
+
+        /// <summary>
+        /// drp_listing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drp_listing;
+
+        /// <summary>
+        /// Requiredfieldvalidator12 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator12;
+
+        /// <summary>
+        /// txt_tags control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_tags;
+
+        /// <summary>
+        /// Requiredfieldvalidator13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator13;
 
         /// <summary>
         /// btn_add_book_details control.

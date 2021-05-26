@@ -28,20 +28,39 @@ namespace Reading_Along
                 da.Fill(dt);
                 datalist_book_details.DataSource = dt;
                 datalist_book_details.DataBind();
+                rpr_book_details.DataSource = dt;
+                rpr_book_details.DataBind();
+                rpr_description.DataSource = dt;
+                rpr_description.DataBind();
+                con.Close();
+
+                //get author id & name
+                con.Open();
                 string str = "select * from Books_DB where ID='" + Book_Detail_ID + "'";
                 SqlCommand com = new SqlCommand(str, con);
                 SqlDataReader reader = com.ExecuteReader();
                 reader.Read();
-                img_book_cover.ImageUrl = "../BooksStorage/BookCover/" + reader["Book_Cover_Page"].ToString();
+                string get_BookAuthor_name = reader["Book_Author"].ToString();
+                string get_category_name = reader["Book_Category"].ToString();
                 reader.Close();
+                con.Close();
 
-                if (dt.Rows.Count <= 0) {
-                    ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Please login or Your session has expired.');location.href='index.aspx';", true);
-                }
-                else
-                {
+                //get author details
+                con.Open();
+                SqlDataAdapter da_author = new SqlDataAdapter("select * from Authors_DB where Author_Name ='" + get_BookAuthor_name + "'", con);
+                DataTable dt_author = new DataTable();
+                da_author.Fill(dt_author);
+                rpr_author_details.DataSource = dt_author;
+                rpr_author_details.DataBind();
+                con.Close();
 
-                }
+                //get related books details
+                con.Open();
+                SqlDataAdapter da_related_book = new SqlDataAdapter("select * from Books_DB where Book_Category ='" + get_category_name + "'", con);
+                DataTable dt_related_book = new DataTable();
+                da_related_book.Fill(dt_related_book);
+                rpr_relatedbooks.DataSource = dt_related_book;
+                rpr_relatedbooks.DataBind();
                 con.Close();
             }
             catch (Exception ex)

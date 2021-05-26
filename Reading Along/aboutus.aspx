@@ -46,7 +46,7 @@
 											Reading Along has come a long way from its beginnings, please don't hesitate to contact us.</p>
 									</div>
 									<div class="tg-btns">
-										<a class="tg-btn tg-active" href="#">Meet Our Team</a>
+										<a class="tg-btn tg-active" href="#our_team">Meet Our Team</a>
 									</div>
 								</div>
 							</div>
@@ -72,9 +72,9 @@
 						<div class="row">
 							<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 								<div class="tg-calltoaction">
-									<h2>Fully Loaded Template</h2>
-									<h3>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore et dolore.</h3>
-									<a class="tg-btn tg-active" href="javascript:void(0);">Buy Now</a>
+									<h2>Fully Loaded Library</h2>
+									<h3>Get all what you want to read at Reading Along.</h3>
+									<a class="tg-btn tg-active" href="AllBooks.aspx">Buy Now</a>
 								</div>
 							</div>
 						</div>
@@ -102,10 +102,13 @@
 										</figure>
 										<div class="tg-successcontent">
 											<div class="tg-sectionhead">
-												<h2><span>June 27, 2017</span>First Step Toward Success</h2>
+												<h2><span>November 21, 2020</span>First Step Toward Project</h2>
 											</div>
 											<div class="tg-description">
-												<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur cepteur sint occaecat cupidatat.</p>
+												<p>We have decided to make an cloud base library project in year 2020 planned a proposal for the same. 
+													we planning to do this project in group with 2 members Rohit Sawant & Neda khan. Planning is the process of thinking about the activities required to achieve a desired goal.
+													so we started to plan proposed tasks & goals of the project. At the end of the semester we documented the complete pre-documentation of the project.
+												</p>
 											</div>
 										</div>
 									</div>
@@ -115,23 +118,12 @@
 										</figure>
 										<div class="tg-successcontent">
 											<div class="tg-sectionhead">
-												<h2><span>June 27, 2017</span>First Step Toward Success</h2>
+												<h2><span>Feb 17, 2021</span>Secound Step Toward Project</h2>
 											</div>
 											<div class="tg-description">
-												<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur cepteur sint occaecat cupidatat.</p>
-											</div>
-										</div>
-									</div>
-									<div class="item">
-										<figure>
-											<img src="images/img-01.jpg" alt="image description">
-										</figure>
-										<div class="tg-successcontent">
-											<div class="tg-sectionhead">
-												<h2><span>June 27, 2017</span>First Step Toward Success</h2>
-											</div>
-											<div class="tg-description">
-												<p>Consectetur adipisicing elit sed do eiusmod tempor incididunt labore toloregna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamcoiars nisiuip commodo consequat aute irure dolor in aprehenderit aveli esseati cillum dolor fugiat nulla pariatur cepteur sint occaecat cupidatat.</p>
+												<p>After Sem-3 we took steps towards project implementation. We got through various project designs, online bootstraps, modules. 
+													The main challenge of the project was azure cloud implementation we took an online Azure web application development course. 
+													We togetherly completed the course and divided our work load. Then we started our project in Visual Studio with the 1st page as Index.aspx</p>
 											</div>
 										</div>
 									</div>
@@ -155,26 +147,18 @@
 								<div id="tg-testimonialsslider" class="tg-testimonialsslider tg-testimonials owl-carousel">
 									<div class="item tg-testimonial">
 										<figure><img src="images/author/imag-02.jpg" alt="image description"></figure>
-										<blockquote><q>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore tolore magna aliqua enim ad minim veniam, quis nostrud exercitation ullamcoiars nisi ut aliquip commodo.</q></blockquote>
+										<blockquote><q>The best book collection we have offered you. Our contain management team has work alot to bring the best for our readers</q></blockquote>
 										<div class="tg-testimonialauthor">
-											<h3>Holli Fenstermacher</h3>
-											<span>Manager @ CIFP</span>
+											<h3>Mrunal Gaikwad</h3>
+											<span>Content-Manager @ Reading Along</span>
 										</div>
 									</div>
 									<div class="item tg-testimonial">
-										<figure><img src="images/author/imag-02.jpg" alt="image description"></figure>
-										<blockquote><q>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore tolore magna aliqua enim ad minim veniam, quis nostrud exercitation ullamcoiars nisi ut aliquip commodo.</q></blockquote>
+										<figure><img src="images/author/imag-03.jpg" alt="image description"></figure>
+										<blockquote><q>Our marketing team are reaching out to you through all the posssible mediums. we are also coming up with the best possible deals and subscription plans.</q></blockquote>
 										<div class="tg-testimonialauthor">
-											<h3>Holli Fenstermacher</h3>
-											<span>Manager @ CIFP</span>
-										</div>
-									</div>
-									<div class="item tg-testimonial">
-										<figure><img src="images/author/imag-02.jpg" alt="image description"></figure>
-										<blockquote><q>Consectetur adipisicing elit sed do eiusmod tempor incididunt ut labore tolore magna aliqua enim ad minim veniam, quis nostrud exercitation ullamcoiars nisi ut aliquip commodo.</q></blockquote>
-										<div class="tg-testimonialauthor">
-											<h3>Holli Fenstermacher</h3>
-											<span>Manager @ CIFP</span>
+											<h3>Pawan Rana</h3>
+											<span>Marketing-Manager @ Reading Along</span>
 										</div>
 									</div>
 								</div>
@@ -197,12 +181,12 @@
 								<h2><span>Team Behind Book Library</span>Meet Our Professionals</h2>
 							</div>
 						</div>
-						<div id="tg-teamsslider" class="tg-authors tg-authorsslider tg-teamsmember owl-carousel">
+						<div id="tg-teamsslider" class="tg-authors tg-teamsmember owl-carousel">
 							<div class="item tg-author tg-member">
-								<figure><a href="javascript:void(0);"><img src="images/team/img-01.jpg" alt="image description"></a></figure>
+								<figure><a href="javascript:void(0);"><img src="images/Owner/MrRohit.jpg" alt="image description"></a></figure>
 								<div class="tg-authorcontent">
 									<h2><a href="javascript:void(0);">Rohit Sawant</a></h2>
-									<span>Project Developer</span>
+									<span>Owner & Project Developer</span>
 									<ul class="tg-socialicons">
 										<li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
 										<li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
@@ -211,10 +195,10 @@
 								</div>
 							</div>
 							<div class="item tg-author tg-member">
-								<figure><a href="javascript:void(0);"><img src="images/team/img-02.jpg" alt="image description"></a></figure>
+								<figure><a href="javascript:void(0);"><img src="images/Owner/missnedakhan.jpg" alt="image description"></a></figure>
 								<div class="tg-authorcontent">
 									<h2><a href="javascript:void(0);">Neda Khan</a></h2>
-									<span>Project Developer</span>
+									<span>Owner & Project Developer</span>
 									<ul class="tg-socialicons">
 										<li class="tg-facebook"><a href="javascript:void(0);"><i class="fa fa-facebook"></i></a></li>
 										<li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>

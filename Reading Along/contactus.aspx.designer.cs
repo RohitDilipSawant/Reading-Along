@@ -24,6 +24,15 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.TextBox txt_name;
 
         /// <summary>
+        /// req_validator_contact_us_1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_validator_contact_us_1;
+
+        /// <summary>
         /// txt_email control.
         /// </summary>
         /// <remarks>
@@ -31,6 +40,15 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_email;
+
+        /// <summary>
+        /// req_validator_contact_us_2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_validator_contact_us_2;
 
         /// <summary>
         /// txt_phone control.
@@ -42,6 +60,15 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.TextBox txt_phone;
 
         /// <summary>
+        /// req_validator_contact_us_3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_validator_contact_us_3;
+
+        /// <summary>
         /// txt_subject control.
         /// </summary>
         /// <remarks>
@@ -51,6 +78,15 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.TextBox txt_subject;
 
         /// <summary>
+        /// req_validator_contact_us_4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_validator_contact_us_4;
+
+        /// <summary>
         /// txt_comment control.
         /// </summary>
         /// <remarks>
@@ -58,5 +94,23 @@ namespace Reading_Along
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txt_comment;
+
+        /// <summary>
+        /// req_validator_contact_us_5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator req_validator_contact_us_5;
+
+        /// <summary>
+        /// btn_submit_contactus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_submit_contactus;
     }
 }

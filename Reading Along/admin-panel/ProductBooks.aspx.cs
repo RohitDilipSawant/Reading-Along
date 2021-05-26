@@ -243,7 +243,7 @@ namespace Reading_Along
                 string get_book_name = txt_add_Book_Name.Text;
                 string get_book_description = txt_add_description.Text.ToString();
                 string get_book_publish_date = txt_add_publish_date.Text;
-                string get_book_author = txt_add_book_author.Text;
+                string get_book_author = drp_add_book_author.SelectedValue;
                 string get_book_publisher = txt_add_book_publisher.Text;
                 string get_book_category = drp_add_category.Text;
                 string get_book_sub_category = drp_add_sub_category.Text;
@@ -255,9 +255,10 @@ namespace Reading_Along
                 string get_book_Book_Cover_Page = lbl_link.Text;
                 string get_book_Book_Short_Name = txt_add_book_short_name.Text;
                 string get_book_File_Path = lbl_link_file.Text;
+                string get_product_listing = drp_listing.SelectedValue;
                 con.Open();
-                string str = "INSERT INTO [dbo].[Books_DB] ([Book_Name],[Book_Description],[Book_Publish_Date],[Book_Author],[Publisher],[Book_Category],[Book_Sub_Category],[Book_Format],[Book_Pages],[Book_View],[Book_ISBN10],[Book_ISBN13],[Book_Cover_Page],[Book_Short_Name],[File_Path]) " +
-                    "VALUES ('" + get_book_name + "','" + get_book_description + "','" + get_book_publish_date + "','" + get_book_author + "','" + get_book_publisher + "','" + get_book_category + "','" + get_book_sub_category + "','" + get_book_format + "','" + get_book_page + "','" + get_book_dimentions + "','" + get_book_isbn10 + "','" + get_book_isbn13 + "','" + get_book_Book_Cover_Page + "','" + get_book_Book_Short_Name + "','" + get_book_File_Path + "');";
+                string str = "INSERT INTO [dbo].[Books_DB] ([Book_Name],[Book_Description],[Book_Publish_Date],[Book_Author],[Publisher],[Book_Category],[Book_Sub_Category],[Book_Format],[Book_Pages],[Book_View],[Book_ISBN10],[Book_ISBN13],[Book_Cover_Page],[Book_Short_Name],[File_Path], Product_Listing) " +
+                    "VALUES ('" + get_book_name + "','" + get_book_description + "','" + get_book_publish_date + "','" + get_book_author + "','" + get_book_publisher + "','" + get_book_category + "','" + get_book_sub_category + "','" + get_book_format + "','" + get_book_page + "','" + get_book_dimentions + "','" + get_book_isbn10 + "','" + get_book_isbn13 + "','" + get_book_Book_Cover_Page + "','" + get_book_Book_Short_Name + "','" + get_book_File_Path + "','" + get_product_listing + "');";
                 SqlCommand com = new SqlCommand(str, con);
                 SqlDataReader reader = com.ExecuteReader();
                 con.Close();
@@ -266,10 +267,10 @@ namespace Reading_Along
             }
             catch (Exception ex)
             {
-                Response.Write(@"<script language='javascript'>alert('Something went wrong!!!'"+ex+");</script>");
+                Response.Write(@"<script language='javascript'>alert('Something went wrong!!!');</script>");
                 Response.Write(@"<script language='javascript'>window.open('ProductBooks.aspx','_self');</script>");
             }
-            
+
         }
 
         protected void btn_add_upload_cover_Click(object sender, EventArgs e)

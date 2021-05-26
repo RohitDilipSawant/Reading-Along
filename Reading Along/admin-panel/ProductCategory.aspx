@@ -21,7 +21,7 @@
         </div>
       </div>
     </div>
-    <!-- Page content & sub-category list -->
+    <!-- Page content category & sub-category list -->
     <div class="container-fluid mt--6" id="category_list_div" runat="server">
       <!-- Dark table -->
       <div class="row">
@@ -31,7 +31,7 @@
                 <div class="col-9">
                   <h3 class="text-white mb-0">All Category</h3>
                 </div>
-                <div class="col-1 text-left">
+                <div class="col-3 text-right">
                     <asp:Button ID="btn_add_category" runat="server" class="btn btn-sm btn-primary" Text="Add Category" OnClick="btn_add_category_Click"/>
                 </div>
               </div>
@@ -81,7 +81,7 @@
                 <div class="col-9">
                   <h3 class="text-white mb-0">All Sub-Category</h3>
                 </div>
-                <div class="col-1 text-left">
+                <div class="col-3 text-right">
                     <asp:Button ID="btn_add_sub_category" runat="server" class="btn btn-sm btn-warning" Text="Add Sub Category" OnClick="btn_add_sub_category_Click"/>
                 </div>
               </div>
