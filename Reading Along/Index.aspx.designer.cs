@@ -33,6 +33,15 @@ namespace Reading_Along
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl no_of_users;
 
         /// <summary>
+        /// no_of_happy_user control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl no_of_happy_user;
+
+        /// <summary>
         /// rpr_Most_Read control.
         /// </summary>
         /// <remarks>

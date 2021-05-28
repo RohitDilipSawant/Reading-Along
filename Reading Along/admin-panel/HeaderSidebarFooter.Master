@@ -139,7 +139,7 @@
                         </div>
                         <a href="#!" class="dropdown-item">
                           <i class="ni ni-single-02"></i>
-                          <span>My profile</span>
+                          <span>Admin</span>
                         </a>
                         <div class="dropdown-divider"></div>
                         <a href="Dashboard.aspx?AdminLogout=logoff" class="dropdown-item">

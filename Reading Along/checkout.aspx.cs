@@ -100,6 +100,7 @@ namespace Reading_Along
             SqlDataReader set_user_sub_details_reader = set_user_sub_details_com.ExecuteReader();
             con.Close();
             Session["user_subscription"] = null;
+            //EmailHealper.SendSubscriptionConfirm(get_user_email_id);
             Response.Write(@"<script language='javascript'>alert('Successful!!!');</script>");
             Response.Write(@"<script language='javascript'>window.open('Index.aspx','_self');</script>");
 

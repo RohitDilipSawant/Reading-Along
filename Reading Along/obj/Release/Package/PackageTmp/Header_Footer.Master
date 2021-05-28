@@ -22,33 +22,7 @@
 	<script src="design/main/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 
 	<style>
-		/* Center the loader */
-		#pre-loader {
-		  position: absolute;
-		  left: 50%;
-		  top: 50%;
-		  z-index: 1;
-		  width: 120px;
-		  height: 120px;
-		  margin: -76px 0 0 -76px;
-		  border: 16px solid #f3f3f3;
-		  border-radius: 50%;
-		  border-top: 16px solid #04aa6d;
-		  -webkit-animation: spin 2s linear infinite;
-		  animation: spin 2s linear infinite;
-		}
-		@-webkit-keyframes spin {
-		  0% { -webkit-transform: rotate(0deg); }
-		  100% { -webkit-transform: rotate(360deg); }
-		}
-
-		@keyframes spin {
-		  0% { transform: rotate(0deg); }
-		  100% { transform: rotate(360deg); }
-		}
-	</style>
-	<style>
-	 #btn_Email_Newsletter {
+		#btn_Email_Newsletter {
 			top: 0;
 			right: 0;
 			z-index: 2;
@@ -153,50 +127,18 @@
 												<span>Clear Your Wishlist</span>
 											</a>
 											<div class="tg-btns">
-												<a class="tg-btn tg-active" href="javascript:void(0);">View Wishlist</a>
+												<a class="tg-btn tg-active" href="wishlist.aspx">View Wishlist</a>
 											</div>
 										</div>
 									</div>
                                     <%--<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label><asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>--%>
 								</div>
-								<%--<div class="dropdown tg-themedropdown tg-minicartdropdown">
-									<a href="javascript:void(0);" id="tg-minicart" class="tg-btnthemedropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-										<span class="tg-themebadge">0</span>
-										<i class="icon-cart"></i>
-										<span>₹00.00</span>
-									</a>
-									<div class="dropdown-menu tg-themedropdownmenu" aria-labelledby="tg-minicart">
-										<div class="tg-minicartbody">
-											<div class="tg-minicarproduct">
-												<figure>
-													<img src="images/products/img-01.jpg" alt="image description">
-													
-												</figure>
-												<div class="tg-minicarproductdata">
-													<h5><a href="javascript:void(0);">Our State Fair Is A Great Function</a></h5>
-													<h6><a href="javascript:void(0);">₹ 12.15</a></h6>
-												</div>
-											</div>
-										</div>
-										<div class="tg-minicartfoot">
-											<a class="tg-btnemptycart" href="javascript:void(0);">
-												<i class="fa fa-trash-o"></i>
-												<span>Clear Your Cart</span>
-											</a>
-											<span class="tg-subtotal">Subtotal: <strong>35.78</strong></span>
-											<div class="tg-btns">
-												<a class="tg-btn tg-active" href="javascript:void(0);">View Cart</a>
-												<a class="tg-btn" href="javascript:void(0);">Checkout</a>
-											</div>
-										</div>
-									</div>
-								</div>--%>
 							</div>
 							<div class="tg-searchbox">
 								<div class="tg-formtheme tg-formsearch">
 									<fieldset>
-										<input type="text" name="search" class="typeahead form-control" style="width : 85%" placeholder="Search by title, author, keyword, ISBN...">
-										<button class="typeahead form-control" style="width : 1%; padding: 10px 30px 10px 5px;" type="submit"><i class="icon-magnifier"></i></button>
+										<input type="text" id="txt_main_search" runat="server" name="search" class="typeahead form-control" style="width : 85%" placeholder="Search by title, author, keyword, ISBN...">
+                                        <asp:LinkButton ID="lnk_main_search" class="typeahead form-control" style="width : 1%; padding: 10px 30px 10px 5px; font-size : 18px;" runat="server" OnClick="lnk_main_search_Click"><i class="icon-magnifier"></i></asp:LinkButton>
 									</fieldset>
 								</div>
 							</div>
@@ -223,587 +165,43 @@
 											<a href="javascript:void(0);">All Categories</a>
 											<div class="mega-menu">
 												<ul class="tg-themetabnav" role="tablist">
-													<li role="presentation" class="active">
-														<a href="#artandphotography" aria-controls="artandphotography" role="tab" data-toggle="tab">Art &amp; Photography</a>
-													</li>
-													<li role="presentation">
-														<a href="#biography" aria-controls="biography" role="tab" data-toggle="tab">Biography</a>
-													</li>
-													<li role="presentation">
-														<a href="#childrensbook" aria-controls="childrensbook" role="tab" data-toggle="tab">Children’s Book</a>
-													</li>
-													<li role="presentation">
-														<a href="#craftandhobbies" aria-controls="craftandhobbies" role="tab" data-toggle="tab">Craft &amp; Hobbies</a>
-													</li>
-													<li role="presentation">
-														<a href="#crimethriller" aria-controls="crimethriller" role="tab" data-toggle="tab">Crime &amp; Thriller</a>
-													</li>
-													<li role="presentation">
-														<a href="#fantasyhorror" aria-controls="fantasyhorror" role="tab" data-toggle="tab">Fantasy &amp; Horror</a>
-													</li>
-													<li role="presentation">
-														<a href="#fiction" aria-controls="fiction" role="tab" data-toggle="tab">Fiction</a>
-													</li>
-													<li role="presentation">
-														<a href="#fooddrink" aria-controls="fooddrink" role="tab" data-toggle="tab">Food &amp; Drink</a>
-													</li><li role="presentation">
-														<a href="#graphicanimemanga" aria-controls="graphicanimemanga" role="tab" data-toggle="tab">Graphic, Anime &amp; Manga</a>
-													</li>
-													<li role="presentation">
-														<a href="#sciencefiction" aria-controls="sciencefiction" role="tab" data-toggle="tab">Science Fiction</a>
-													</li>
+													<asp:Repeater ID="rpr_category_menu" runat="server">
+														<ItemTemplate>
+															<li>
+																<a href="<%# Eval("ID", "AllBooks.aspx?FilterCategory={0}") %>"><%# Eval("Category") %></a>
+															</li>
+														</ItemTemplate>
+													</asp:Repeater>
 												</ul>
 												<div class="tab-content tg-themetabcontent">
-													<div role="tabpanel" class="tab-pane active" id="artandphotography">
-														<ul>
+													<div role="tabpanel" class="tab-pane active">
+														<ul>		
 															<li>
 																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
+																	<h2>New Released</h2>
 																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
+																<asp:Repeater ID="rpr_innertab_new_released" runat="server">
+																	<ItemTemplate>
+																		<ul>
+																			<li><a href="<%# Eval("ID", "BooksDetails.aspx?Book_ID={0}") %>"><%# Eval("Book_Name") %></a></li>
+																		</ul>
+																	</ItemTemplate>
+																</asp:Repeater>
 															</li>
 														</ul>
 														<ul>
 															<li>
 																<figure><img src="images/img-01.png" alt="image description"></figure>
 																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
+																	<h3>More Than<span id="books_total_count" runat="server"></span>Books Collection</h3>
 																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
+																		<p>We have the best collection of all time subscribe now and enjoy all our new collection.</p>
 																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
+																	<a class="tg-btn" href="AllBooks.aspx">view all</a>
 																</div>
 															</li>
 														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="biography">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="childrensbook">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="craftandhobbies">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="crimethriller">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="fantasyhorror">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="fiction">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="fooddrink">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="graphicanimemanga">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
-													<div role="tabpanel" class="tab-pane" id="sciencefiction">
-														<ul>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>History</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Veniam quis nostrud</a></li>
-																	<li><a href="products.html">Exercitation</a></li>
-																	<li><a href="products.html">Laboris nisi ut aliuip</a></li>
-																	<li><a href="products.html">Commodo conseat</a></li>
-																	<li><a href="products.html">Duis aute irure</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Architecture</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Tough As Nails</a></li>
-																	<li><a href="products.html">Pro Grease Monkey</a></li>
-																	<li><a href="products.html">Building Memories</a></li>
-																	<li><a href="products.html">Bulldozer Boyz</a></li>
-																	<li><a href="products.html">Build Or Leave On Us</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-															<li>
-																<div class="tg-linkstitle">
-																	<h2>Art Forms</h2>
-																</div>
-																<ul>
-																	<li><a href="products.html">Consectetur adipisicing</a></li>
-																	<li><a href="products.html">Aelit sed do eiusmod</a></li>
-																	<li><a href="products.html">Tempor incididunt labore</a></li>
-																	<li><a href="products.html">Dolore magna aliqua</a></li>
-																	<li><a href="products.html">Ut enim ad minim</a></li>
-																</ul>
-																<a class="tg-btnviewall" href="products.html">View All</a>
-															</li>
-														</ul>
-														<ul>
-															<li>
-																<figure><img src="images/img-01.png" alt="image description"></figure>
-																<div class="tg-textbox">
-																	<h3>More Than<span>12,0657,53</span>Books Collection</h3>
-																	<div class="tg-description">
-																		<p>Consectetur adipisicing elit sed doe eiusmod tempor incididunt laebore toloregna aliqua enim.</p>
-																	</div>
-																	<a class="tg-btn" href="products.html">view all</a>
-																</div>
-															</li>
-														</ul>
-													</div>
+													</div>		
 												</div>
 											</div>
 										</li>
@@ -906,7 +304,6 @@
 										<li class="tg-twitter"><a href="javascript:void(0);"><i class="fa fa-twitter"></i></a></li>
 										<li class="tg-linkedin"><a href="javascript:void(0);"><i class="fa fa-linkedin"></i></a></li>
 										<li class="tg-googleplus"><a href="javascript:void(0);"><i class="fa fa-google-plus"></i></a></li>
-										<li class="tg-rss"><a href="javascript:void(0);"><i class="fa fa-rss"></i></a></li>
 									</ul>
 								</div>
 							</div>
@@ -941,6 +338,7 @@
 														<figure><a href="javascript:void(0);"><img src="../BooksStorage/AuthorStorage/AuthorProfilePicture/<%# Eval("Author_Picture") %>" style=" height : 65px;" alt="image description"></a></figure>
 														<div class="tg-authornamebooks">
 															<h4><a href="javascript:void(0);"><%# Eval("Author_Name") %></a></h4>
+															<span>Author Since: <%# Eval("Author_Since") %></span>
 														</div>
 													</li>
 												</ItemTemplate>
@@ -966,7 +364,6 @@
                                     <asp:TextBox ID="txt_email_news" type="email" name="email" class="form-control" ValidationGroup="email_newsletter" placeholder="Enter Your Email ID" runat="server"></asp:TextBox>
                                     <asp:Button ID="btn_Email_Newsletter" runat="server" ValidationGroup="email_newsletter" Text="Send" OnClick="btn_Email_Newsletter_Click" style="border-left: 1px solid;"/>
 									<asp:RequiredFieldValidator ID="reqemail_newsletter" ControlToValidate="txt_email_news" ValidationGroup="email_newsletter" runat="server" ErrorMessage="Email Required"></asp:RequiredFieldValidator> 
-									<%--<button runat="server" id="" type="button" OnClick="btn_Email_Newsletters_Click"><i class="icon-envelope"></i></button>--%>
 								</fieldset>
 							</div>
 						</div>
@@ -979,7 +376,7 @@
 					<div class="row">
 						<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 							<span class="tg-paymenttype"><img src="images/paymenticon.png" alt="image description"></span>
-							<span class="tg-copyright">2021 All Rights Reserved By &copy; Reading Along</span>
+							<span class="tg-copyright">2021 All Rights Reserved By &copy; Reading Along & Developed By Rohit Sawant & Neda Khan</span>
 						</div>
 					</div>
 				</div>

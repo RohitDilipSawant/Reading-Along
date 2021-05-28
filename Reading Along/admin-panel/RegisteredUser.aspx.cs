@@ -21,7 +21,10 @@ namespace Reading_Along.admin_panel
                 user_edit_div.Visible = true;
                 user_add_div.Visible = false;
                 user_list_div.Visible = false;
-                binduserData();
+                if (!Page.IsPostBack)
+                {
+                    binduserData();
+                }
             }
             if (Request.QueryString["remove_user_ID"] != null)
             {

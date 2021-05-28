@@ -78,6 +78,51 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.ListView listview_wishlist;
 
         /// <summary>
+        /// txt_main_search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText txt_main_search;
+
+        /// <summary>
+        /// lnk_main_search control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton lnk_main_search;
+
+        /// <summary>
+        /// rpr_category_menu control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpr_category_menu;
+
+        /// <summary>
+        /// rpr_innertab_new_released control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Repeater rpr_innertab_new_released;
+
+        /// <summary>
+        /// books_total_count control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl books_total_count;
+
+        /// <summary>
         /// user_options control.
         /// </summary>
         /// <remarks>

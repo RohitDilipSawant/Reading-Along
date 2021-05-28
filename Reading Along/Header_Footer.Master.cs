@@ -17,15 +17,21 @@ namespace Reading_Along
         {
             try
             {
+                if (Request.QueryString["Search"] != null)
+                {
+                    if (!Page.IsPostBack)
+                    {
+                        string get_search_word = Request.QueryString["Search"].ToString();
+                        txt_main_search.Value = get_search_word;
+                    }
+                }
                 SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
                 User_name_block.Visible = false;
                 user_options.Visible = false;
                 bindauthorData();
-                if (Request.QueryString["Send_Newsletter_Email"] != "send")
-                {
-                    
-                }
-
+                bindtopcategoryData();
+                bindinnertab_new_releasedData();
+                totalbooks_count_bindData();
                 if (Session["User_Login"] != null)
                 {
                     string User_Session = Session["User_Login"].ToString();
@@ -97,6 +103,59 @@ namespace Reading_Along
             SqlDataReader reader = com.ExecuteReader();
             con.Close();
             txt_email_news.Text = "";
+        }
+        protected void bindtopcategoryData()
+        {
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("select TOP 10 * from [categories_db] order by Category ASC;", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                rpr_category_menu.DataSource = dt;
+                rpr_category_menu.DataBind();
+                
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        protected void bindinnertab_new_releasedData()
+        {
+            try
+            {
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT TOP 6 * FROM [Books_DB] ORDER BY ID DESC;", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                rpr_innertab_new_released.DataSource = dt;
+                rpr_innertab_new_released.DataBind();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        protected void totalbooks_count_bindData()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand qry = new SqlCommand("SELECT COUNT(*) FROM Books_DB;", con);
+                Int32 get_count_String = (Int32)qry.ExecuteScalar();
+                books_total_count.InnerText = get_count_String.ToString();
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+
+        protected void lnk_main_search_Click(object sender, EventArgs e)
+        {
+            string search_str = txt_main_search.Value;
+            Response.Redirect("AllBooks.aspx?Search="+ search_str);
         }
     }
 }

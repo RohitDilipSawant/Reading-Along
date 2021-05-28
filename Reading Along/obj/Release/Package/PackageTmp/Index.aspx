@@ -93,7 +93,7 @@
 									<div class="tg-status">
 										<div class="tg-statuscontent">
 											<span class="tg-statusicon"><i class="icon-book"></i></span>
-											<h2>Books we have<span id="no_of_book_have" runat="server">24,179,213</span></h2>
+											<h2>Books we have<span id="no_of_book_have" runat="server"></span></h2>
 										</div>
 									</div>
 								</div>
@@ -103,7 +103,7 @@
 									<div class="tg-status">
 										<div class="tg-statuscontent">
 											<span class="tg-statusicon"><i class="icon-user"></i></span>
-											<h2>Total members<span id="no_of_users" runat="server">15,179,213</span></h2>
+											<h2>Total members<span id="no_of_users" runat="server"></span></h2>
 										</div>
 									</div>
 								</div>
@@ -113,7 +113,7 @@
 									<div class="tg-status">
 										<div class="tg-statuscontent">
 											<span class="tg-statusicon"><i class="icon-heart"></i></span>
-											<h2>Happy users<span>1,267,539</span></h2>
+											<h2>Happy users<span id="no_of_happy_user" runat="server"></span></h2>
 										</div>
 									</div>
 								</div>
@@ -236,7 +236,7 @@
 																<div class="tg-frontcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
 																<div class="tg-backcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" alt="image description"></div>
 															</div>
-															<a class="tg-btnaddtowishlist" href="<%# Eval("ID", "books.aspx?addwishlist_ID={0}") %>">
+															<a class="tg-btnaddtowishlist" href="<%# Eval("ID", "AllBooks.aspx?addwishlist_ID={0}") %>">
 																<i class="icon-heart"></i>
 																<span>add to wishlist</span>
 															</a>

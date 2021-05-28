@@ -110,7 +110,7 @@
                 <h6 class="heading-small text-muted mb-4">Author Profile</h6>
                 <div class="pl-lg-4">
                   <div class="row">
-                   <div class="col-lg-1">
+                   <div class="col-lg-2">
                       <div class="form-group">
                           <asp:Image ID="img_add_view_added_author" style="max-height: 95px;" ImageUrl="~/images/Your Book Preview.png" runat="server" />
                           <asp:LinkButton ID="lnk_remove_author_upload" runat="server" Visible="false" style="position : absolute; right: 8%; top : 60%;" OnClick="lnk_remove_author_upload_Click"><i class="ni ni-fat-remove text-danger" style="font-size : 32px;"></i></asp:LinkButton>
@@ -191,6 +191,113 @@
                 </div>           
                 <hr class="my-4" />
                 <asp:Button ID="btn_add_author" class="btn btn-primary" style="float: right;" validationgroup="AddAuthorValidationGroup" runat="server" Text="Save" OnClick="btn_add_author_Click"/>                                                     
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Edit authors -->
+    <div class="container-fluid mt--6" style="padding : 5px 30px; margin-bottom : 10em;" id="author_Edit_div" visible="false" runat="server">
+      <div class="row">
+        <div class="col-xl-10 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-10">
+                  <h3 class="mb-0">Add New Author</h3>
+                </div>
+                <div class="col-2 text-center">
+                    <asp:Button ID="btn_back_to_edit_Author_list" runat="server" class="btn btn-sm btn-primary" style="font-size : 14px;" Text="<< Back to list" CausesValidation="False" OnClick="btn_back_to_Author_list_Click"/>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div>
+                <h6 class="heading-small text-muted mb-4">Author Profile</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                   <div class="col-lg-2">
+                      <div class="form-group">
+                          <asp:Image ID="img_edit_view_added_author" style="max-height: 95px;" ImageUrl="~/images/Your Book Preview.png" runat="server" />
+                          <asp:LinkButton ID="lnk_edit_remove_author_upload" runat="server" Visible="true" style="position : absolute; right: 8%; top : 60%;" OnClick="lnk_edit_remove_author_upload_Click"><i class="ni ni-fat-remove text-danger" style="font-size : 32px;"></i></asp:LinkButton>
+                      </div>
+                    </div>
+                    <div class="col-lg-7">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Add Cover</label>
+                          <asp:FileUpload ID="file_edit_upl_author_image" class="form-control" validationgroup="file_edit_upl_author_validate_group" Visible="false" causesvalidation="true" runat="server" />
+                          <asp:Label class="form-control" style="border: none" ID="lbl_edit_link" runat="server"></asp:Label>
+                          <asp:requiredfieldvalidator id="RequiredFieldValidator2"
+                              controltovalidate="file_edit_upl_author_image"
+                              validationgroup="file_edit_upl_author_validate_group"
+                              errormessage="Author Image is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                    <div class="col-lg-2">
+                      <div class="form-group">
+                          <label class="form-control-label" for="input-username"> &nbsp </label>
+                        <asp:Button ID="btn_edit_upload_author" class="btn form-control btn-warning" style="float: right;" Visible="false" runat="server" Text="Upload" validationgroup="file_edit_upl_author_validate_group" OnClick="btn_edit_upload_author_Click"/>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <hr />
+                <h6 class="heading-small text-muted mb-4">New Author</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-5">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Author Name</label>
+                        <asp:TextBox ID="txt_edit_Author_Name" MaxLength="150" class="form-control" ValidationGroup="editAuthorValidationGroup" placeholder="Enter Author Name" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator3"
+                              controltovalidate="txt_edit_Author_Name"
+                              validationgroup="editAuthorValidationGroup"
+                              errormessage="Author Name is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                    <div class="col-lg-5">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Author Since</label>
+                        <asp:TextBox ID="txt_edit_Author_since" MaxLength="12" class="form-control" textmode="SingleLine" ValidationGroup="editAuthorValidationGroup" placeholder="Eg :- 19-July" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator4"
+                              controltovalidate="txt_edit_Author_since"
+                              validationgroup="editAuthorValidationGroup"
+                              errormessage="Author Since is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                  </div>                                                     
+              </div>
+                <hr />
+                <h6 class="heading-small text-muted mb-4">Author Description</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Description:</label>
+                        <asp:TextBox ID="txt_edit_author_Description" MaxLength="150" TextMode="MultiLine" class="form-control" ValidationGroup="editAuthorValidationGroup" placeholder="Enter Subscription Description" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator5"
+                              controltovalidate="txt_edit_author_Description"
+                              validationgroup="editAuthorValidationGroup"
+                              errormessage="Description is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                  </div>  
+                </div>           
+                <hr class="my-4" />
+                <asp:Button ID="btn_edit_author" class="btn btn-primary" style="float: right;" validationgroup="editAuthorValidationGroup" runat="server" Text="Update" OnClick="btn_edit_author_Click"/>                                                     
               </div>
             </div>
           </div>

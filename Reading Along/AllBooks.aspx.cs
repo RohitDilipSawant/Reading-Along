@@ -114,6 +114,7 @@ namespace Reading_Along
                     con.Close();
                     datalist_all_book.DataSource = dt;
                     datalist_all_book.DataBind();
+                    product_adds.Visible = false;
                 }
                 catch (Exception ex)
                 {
@@ -121,8 +122,14 @@ namespace Reading_Along
             }
             if (Request.QueryString["ViewAllCategory"] == "all")
             {
+                product_adds.Visible = false;
                 bindcategoryData();
                 viewAllCategory_lnk.Visible = false;
+            }
+            if (Request.QueryString["Search"] != null)
+            {
+                bindsearchData();
+                product_adds.Visible = false;
             }
         }
         SqlConnection con = new SqlConnection(ConStringHelper.getConnectionString());
@@ -170,6 +177,23 @@ namespace Reading_Along
                 con.Close();
                 rpr_category.DataSource = dt;
                 rpr_category.DataBind();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        protected void bindsearchData()
+        {
+            try
+            {
+                string get_search_word = Request.QueryString["Search"].ToString();
+                con.Open();
+                SqlDataAdapter da = new SqlDataAdapter("SELECT * FROM Books_DB WHERE product_tags LIKE '%"+ get_search_word + "%' ORDER BY NEWID();", con);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+                con.Close();
+                datalist_all_book.DataSource = dt;
+                datalist_all_book.DataBind();
             }
             catch (Exception ex)
             {

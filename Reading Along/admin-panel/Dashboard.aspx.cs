@@ -32,6 +32,18 @@ namespace Reading_Along.Admin_Panel
                 Int32 get_count_book_String = (Int32)com_book.ExecuteScalar();
                 set_total_book.InnerText = get_count_book_String.ToString();
                 con.Close();
+                con.Open();
+                string str_author = "SELECT count (ID) FROM Authors_DB";
+                SqlCommand com_author = new SqlCommand(str_author, con);
+                Int32 get_count_author_String = (Int32)com_author.ExecuteScalar();
+                set_total_author.InnerText = get_count_author_String.ToString();
+                con.Close();
+                con.Open();
+                string str_active_plan = "SELECT count (ID) FROM SubscriptionPlans_DB";
+                SqlCommand com_active_plan = new SqlCommand(str_active_plan, con);
+                Int32 get_count_active_plan_String = (Int32)com_active_plan.ExecuteScalar();
+                set_total_active_plan.InnerText = get_count_active_plan_String.ToString();
+                con.Close();
             }
             catch (Exception ex)
             {

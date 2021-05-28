@@ -60,7 +60,6 @@
                                   <i class="fas fa-ellipsis-v"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                  <a class="dropdown-item" href="<%# Eval("ID", "ProductCategory.aspx?edit_Category_ID={0}") %>">View / Edit Category</a>
                                   <a class="dropdown-item" href="<%# Eval("ID", "ProductCategory.aspx?remove_Category_ID={0}") %>">Delete</a>
                                 </div>
                               </div>
@@ -73,8 +72,6 @@
             </div>
           </div>
         </div>
-      </div>
-      <div class="row">
         <div class="col-6">
           <div class="card bg-default shadow">
               <div class="card-header bg-transparent row align-items-center">
@@ -114,8 +111,6 @@
                                   <i class="fas fa-ellipsis-v"></i>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                                  <a class="dropdown-item" href="<%# Eval("ID", "ProductCategory.aspx?edit_Category_ID={0}") %>">View / Edit Category</a>
-                                  <a class="dropdown-item" href="<%# Eval("ID", "ProductCategory.aspx?edit_sub_Category_ID={0}") %>">View / Edit Sub Category</a>
                                   <a class="dropdown-item" href="<%# Eval("ID", "ProductCategory.aspx?remove_SubCategory_ID={0}") %>">Delete</a>
                                 </div>
                               </div>
@@ -128,6 +123,9 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="row">
+        
       </div>
     </div>
     <!-- add category -->

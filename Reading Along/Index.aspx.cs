@@ -19,6 +19,7 @@ namespace Reading_Along
             bindauthorchoiceData();
             bindMostReadData();
             bindauthorsData();
+            total_counts_bindData();
         }
         protected void bindNewReleaseData()
         {
@@ -79,6 +80,32 @@ namespace Reading_Along
                 con.Close();
                 rpr_authors.DataSource = dt;
                 rpr_authors.DataBind();
+            }
+            catch (Exception ex)
+            {
+            }
+        }
+        protected void total_counts_bindData()
+        {
+            try
+            {
+                con.Open();
+                SqlCommand qry_book_count = new SqlCommand("SELECT COUNT(*) FROM Books_DB;", con);
+                Int32 get_count_String_book_count = (Int32)qry_book_count.ExecuteScalar();
+                no_of_book_have.InnerText = get_count_String_book_count.ToString();
+                con.Close();
+                
+                con.Open();
+                SqlCommand qry_user_count = new SqlCommand("SELECT COUNT(*) FROM User_DB;", con);
+                Int32 get_count_String_user_count = (Int32)qry_user_count.ExecuteScalar();
+                no_of_users.InnerText = get_count_String_user_count.ToString();
+                con.Close();
+
+                con.Open();
+                SqlCommand qry_Happy_user_count = new SqlCommand("SELECT COUNT(*) FROM User_DB where [User_Subscription] != 'Stater Pack';", con);
+                Int32 get_count_String_Happy_user_count = (Int32)qry_Happy_user_count.ExecuteScalar();
+                no_of_happy_user.InnerText = get_count_String_Happy_user_count.ToString();
+                con.Close();
             }
             catch (Exception ex)
             {

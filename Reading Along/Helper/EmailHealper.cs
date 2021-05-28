@@ -27,5 +27,23 @@ namespace Reading_Along.Helper
                 }
             }
         }
+        public static void SendSubscriptionConfirm(string uemail)
+        {
+            using (MailMessage mail = new MailMessage())
+            {
+                mail.From = new MailAddress("sawantproject@gmail.com");
+                mail.To.Add(uemail);
+                mail.Subject = "Reading Along Subscribed Successful Mail";
+                mail.Body = "<h2> Your Email : " + uemail + " Is Subscribed Now. we request you not to disclose your ID Password with anyone else.</h2>";
+                mail.IsBodyHtml = true;
+
+                using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
+                {
+                    smtp.Credentials = new System.Net.NetworkCredential("sawantproject@gmail.com", "Earn@123");
+                    smtp.EnableSsl = true;
+                    smtp.Send(mail);
+                }
+            }
+        }
     }
 }

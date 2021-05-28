@@ -15,6 +15,15 @@ namespace Reading_Along
     {
 
         /// <summary>
+        /// product_adds control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl product_adds;
+
+        /// <summary>
         /// drp_short_by control.
         /// </summary>
         /// <remarks>
@@ -30,7 +39,7 @@ namespace Reading_Along
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater datalist_all_book;
+        protected global::System.Web.UI.WebControls.ListView datalist_all_book;
 
         /// <summary>
         /// rpr_category control.

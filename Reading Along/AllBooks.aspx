@@ -38,9 +38,9 @@
                                 <div id="tg-content" class="tg-content">
                                     <div class="tg-products">
                                         <div class="tg-sectionhead">
-                                            <h2><span>People’s Choice</span>Bestselling Books</h2>
+                                            <h2><span>People’s Choice</span>Books</h2>
                                         </div>
-                                        <div class="tg-featurebook alert" role="alert">
+                                        <div class="tg-featurebook alert" role="alert" id="product_adds" runat="server">
                                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -51,7 +51,7 @@
                                                     </div>
                                                     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
                                                         <div class="tg-featureditmcontent">
-                                                            <div class="tg-themetagbox"><span class="tg-themetag">featured</span></div>
+                                                            <div class="tg-themetagbox"><span class="tg-themetag">Advertisement</span></div>
                                                             <div class="tg-booktitle">
                                                                 <h3><a href="javascript:void(0);">Things To Know About Green Flat Design</a></h3>
                                                             </div>
@@ -62,10 +62,6 @@
                                                                     <ins>₹23.18</ins>
                                                                     <del>₹30.20</del>
                                                                 </span>
-                                                                <a class="tg-btn tg-btnstyletwo tg-active" href="javascript:void(0);">
-                                                                    <i class="fa fa-book"></i>
-                                                                    <em>Just an ADD</em>
-                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -88,40 +84,40 @@
                                                 </div>
                                             </div>
                                             <div class="row">
-                                                <asp:Repeater ID="datalist_all_book" runat="server">
-                                                <ItemTemplate>
-                                                    <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" style="text-align: left;">
-                                                        <div class="tg-postbook">
-                                                            <figure class="tg-featureimg">
-                                                                <div class="tg-bookimg">
-                                                                    <div class="tg-frontcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" style="max-height : 400.73px;"  alt="image description"></div>
-                                                                    <div class="tg-backcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" style="max-height : 400.73px;" alt="image description"></div>
-                                                                </div>
-                                                                <a class="tg-btnaddtowishlist" href="<%# Eval("ID", "AllBooks.aspx?addwishlist_ID={0}") %>">
-                                                                    <i class="icon-heart"></i>
-                                                                    <span>add to wishlist</span>
-                                                                </a>
-                                                            </figure>
-                                                            <div class="tg-postbookcontent">
-                                                                <ul class="tg-bookscategories">
-                                                                    <li><a href="javascript:void(0);"><%# Eval("Book_Category") %></a></li>
-                                                                    <li><a href="javascript:void(0);"><%# Eval("Book_Sub_Category") %></a></li>
-                                                                </ul>
-                                                                <span class="tg-themetag">Recommended</span>
-                                                                <div class="tg-booktitle">
-                                                                    <h4><a href="<%# Eval("ID", "BooksDetails.aspx?Book_ID={0}") %>"><%# (Eval("Book_Name").ToString().Length > 20) ? (Eval("Book_Name").ToString().Substring(0, 20) + "...") : Eval("Book_Name")%>...</a></h4>
-                                                                    <span class="tg-bookwriter">By: <a href="javascript:void(0);"><%# (Eval("Book_Author").ToString().Length > 20) ? (Eval("Book_Author").ToString().Substring(0, 20) + "...") : Eval("Book_Author")%></a></span>
-                                                                </div>
+                                                <asp:ListView ID="datalist_all_book" runat="server">
+                                                    <ItemTemplate>
+                                                        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-3" style="text-align: left;">
+                                                            <div class="tg-postbook">
+                                                                <figure class="tg-featureimg">
+                                                                    <div class="tg-bookimg">
+                                                                        <div class="tg-frontcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" style="max-height : 400.73px;"  alt="image description"></div>
+                                                                        <div class="tg-backcover"><img src="../BooksStorage/BookCover/<%# Eval("Book_Cover_Page") %>" style="max-height : 400.73px;" alt="image description"></div>
+                                                                    </div>
+                                                                    <a class="tg-btnaddtowishlist" href="<%# Eval("ID", "AllBooks.aspx?addwishlist_ID={0}") %>">
+                                                                        <i class="icon-heart"></i>
+                                                                        <span>add to wishlist</span>
+                                                                    </a>
+                                                                </figure>
+                                                                <div class="tg-postbookcontent">
+                                                                    <ul class="tg-bookscategories">
+                                                                        <li><a href="javascript:void(0);"><%# Eval("Book_Category") %></a></li>
+                                                                        <li><a href="javascript:void(0);"><%# Eval("Book_Sub_Category") %></a></li>
+                                                                    </ul>
+                                                                    <span class="tg-themetag">Recommended</span>
+                                                                    <div class="tg-booktitle">
+                                                                        <h4><a href="<%# Eval("ID", "BooksDetails.aspx?Book_ID={0}") %>"><%# (Eval("Book_Name").ToString().Length > 20) ? (Eval("Book_Name").ToString().Substring(0, 20) + "...") : Eval("Book_Name")%>...</a></h4>
+                                                                        <span class="tg-bookwriter">By: <a href="javascript:void(0);"><%# (Eval("Book_Author").ToString().Length > 20) ? (Eval("Book_Author").ToString().Substring(0, 20) + "...") : Eval("Book_Author")%></a></span>
+                                                                    </div>
                                                                 
-                                                                <a class="tg-btn tg-btnstyletwo" href="<%# Eval("ID", "BookRead.aspx?view_book_ID={0}") %>">
-                                                                    <i class="fa fa-book"></i>
-                                                                    <em>Read Now</em>
-                                                                </a>
+                                                                    <a class="tg-btn tg-btnstyletwo" href="<%# Eval("ID", "BookRead.aspx?view_book_ID={0}") %>">
+                                                                        <i class="fa fa-book"></i>
+                                                                        <em>Read Now</em>
+                                                                    </a>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
                                                 </ItemTemplate>
-                                            </asp:Repeater>
+                                            </asp:ListView>
                                             </div>
                                         </div>
                                     </div>

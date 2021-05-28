@@ -402,6 +402,24 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator10;
 
         /// <summary>
+        /// txt_add_tags control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_add_tags;
+
+        /// <summary>
+        /// Requiredfieldvalidator13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator13;
+
+        /// <summary>
         /// Span1 control.
         /// </summary>
         /// <remarks>
@@ -429,24 +447,6 @@ namespace Reading_Along
         protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator12;
 
         /// <summary>
-        /// txt_tags control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_tags;
-
-        /// <summary>
-        /// Requiredfieldvalidator13 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator13;
-
-        /// <summary>
         /// btn_add_book_details control.
         /// </summary>
         /// <remarks>
@@ -465,219 +465,327 @@ namespace Reading_Along
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl book_edit_div;
 
         /// <summary>
-        /// btn_edit_back_user_list control.
+        /// btn_edit_back_to_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_edit_back_user_list;
+        protected global::System.Web.UI.WebControls.Button btn_edit_back_to_list;
 
         /// <summary>
-        /// img_file_preview control.
+        /// img_edit_view_added_cover control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image img_file_preview;
+        protected global::System.Web.UI.WebControls.Image img_edit_view_added_cover;
 
         /// <summary>
-        /// fileup_cover_page control.
+        /// lnk_edit_remove_cover_upload control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.FileUpload fileup_cover_page;
+        protected global::System.Web.UI.WebControls.LinkButton lnk_edit_remove_cover_upload;
 
         /// <summary>
-        /// fileup_link_lbl control.
+        /// file_edit_upl_book_cover control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label fileup_link_lbl;
+        protected global::System.Web.UI.WebControls.FileUpload file_edit_upl_book_cover;
 
         /// <summary>
-        /// txt_edit_bookname control.
+        /// lbl_edit_link control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_bookname;
+        protected global::System.Web.UI.WebControls.Label lbl_edit_link;
 
         /// <summary>
-        /// txt_edit_book_short_name control.
+        /// RequiredFieldValidator14 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_book_short_name;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator14;
 
         /// <summary>
-        /// txt_edit_book_author control.
+        /// btn_edit_upload_cover control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_book_author;
+        protected global::System.Web.UI.WebControls.Button btn_edit_upload_cover;
 
         /// <summary>
-        /// txt_edit_Book_Publisher control.
+        /// txt_edit_Book_Name control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_Book_Publisher;
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_Book_Name;
 
         /// <summary>
-        /// txt_edit_date control.
+        /// Requiredfieldvalidator16 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_date;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator16;
 
         /// <summary>
-        /// txt_edit_no_pages control.
+        /// view_book_author control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_no_pages;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl view_book_author;
 
         /// <summary>
-        /// txt_edit_file_format control.
+        /// drp_edit_book_author control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_file_format;
+        protected global::System.Web.UI.WebControls.DropDownList drp_edit_book_author;
 
         /// <summary>
-        /// txt_edit_ISBN10 control.
+        /// SqlDataSource1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_ISBN10;
+        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
 
         /// <summary>
-        /// txt_edit_ISBN13 control.
+        /// Requiredfieldvalidator18 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_ISBN13;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator18;
 
         /// <summary>
-        /// txt_edit_Book_Dimentions control.
+        /// txt_edit_book_publisher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_Book_Dimentions;
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_book_publisher;
 
         /// <summary>
-        /// drp_edit_category control.
+        /// Requiredfieldvalidator19 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_edit_category;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator19;
 
         /// <summary>
-        /// sql_categories_drp control.
+        /// view_publish_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sql_categories_drp;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl view_publish_date;
 
         /// <summary>
-        /// drp_edit_subcategory control.
+        /// txt_edit_publish_date control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_edit_subcategory;
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_publish_date;
 
         /// <summary>
-        /// Sql_subcategories_drp control.
+        /// Requiredfieldvalidator20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource Sql_subcategories_drp;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator20;
 
         /// <summary>
-        /// txt_edit_bio control.
+        /// txt_edit_no_of_page control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_edit_bio;
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_no_of_page;
 
         /// <summary>
-        /// status_print control.
+        /// Requiredfieldvalidator21 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl status_print;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator21;
 
         /// <summary>
-        /// drp_status control.
+        /// txt_edit__file_format control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList drp_status;
+        protected global::System.Web.UI.WebControls.TextBox txt_edit__file_format;
 
         /// <summary>
-        /// txt_subscription control.
+        /// txt_edit_isbn10 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_subscription;
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_isbn10;
 
         /// <summary>
-        /// txt_access_book control.
+        /// Requiredfieldvalidator22 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txt_access_book;
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator22;
 
         /// <summary>
-        /// btn_edit_profile control.
+        /// txt_edit_isbn13 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btn_edit_profile;
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_isbn13;
+
+        /// <summary>
+        /// Requiredfieldvalidator23 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator23;
+
+        /// <summary>
+        /// txt_edit_book_dimentions control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_book_dimentions;
+
+        /// <summary>
+        /// Requiredfieldvalidator24 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator24;
+
+        /// <summary>
+        /// view_category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl view_category;
+
+        /// <summary>
+        /// view_sub_category control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl view_sub_category;
+
+        /// <summary>
+        /// txt_edit_description control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_description;
+
+        /// <summary>
+        /// Requiredfieldvalidator25 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator25;
+
+        /// <summary>
+        /// txt_edit_tags control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_edit_tags;
+
+        /// <summary>
+        /// Requiredfieldvalidator27 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator27;
+
+        /// <summary>
+        /// drp_edit_listing control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList drp_edit_listing;
+
+        /// <summary>
+        /// Requiredfieldvalidator26 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator Requiredfieldvalidator26;
+
+        /// <summary>
+        /// btn_edit_book_details control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btn_edit_book_details;
     }
 }

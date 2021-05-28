@@ -2716,6 +2716,7 @@
     <Content Include="authors.aspx" />
     <Content Include="BooksStorage\AuthorStorage\AuthorProfilePicture\21_05_2021_02_05_42_2086.jpg" />
     <Content Include="BooksStorage\AuthorStorage\AuthorProfilePicture\21_05_2021_02_05_49_3526.jpg" />
+    <Content Include="BooksStorage\AuthorStorage\AuthorProfilePicture\27_05_2021_19_05_02_2801.jpg" />
     <Content Include="BooksStorage\AuthorStorage\avatar_admin.png" />
     <Content Include="BookRead.aspx" />
     <Content Include="BooksDetails.aspx" />

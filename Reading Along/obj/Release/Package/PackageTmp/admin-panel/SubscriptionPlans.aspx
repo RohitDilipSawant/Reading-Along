@@ -49,6 +49,7 @@
                     <th scope="col" class="sort" data-sort="name">Accessible Books</th>
                     <th scope="col" class="sort" data-sort="name">Validity</th>
                     <th scope="col" class="sort" data-sort="name">Type</th>
+                    <th scope="col" class="sort" data-sort="name">Tags</th>
                     <th scope="col" class="sort" data-sort="name">Status</th>
                     <th scope="col"></th>
                   </tr>
@@ -68,6 +69,7 @@
                             <td><%# Eval("NoOfBooksAccess") %></td>
                             <td><%# Eval("NoOfDays") %></td>
                             <td><%# Eval("SubscriptionType") %></td>
+                            <td><%# Eval("tags") %></td>
                             <td><%# Eval("plan_status") %></td>
                             <td class="text-right">
                               <div class="dropdown">
@@ -230,6 +232,151 @@
                 </div>
                 <hr class="my-4" />
                 <asp:Button ID="btn_add_SubscriptionPlan" class="btn btn-primary" style="float: right;" validationgroup="AddSubscriptionValidationGroup" runat="server" Text="Save" OnClick="btn_add_SubscriptionPlan_Click"/>                                                     
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- add Subscription -->
+    <div class="container-fluid mt--6" style="padding : 5px 30px; margin-bottom : 10em;" id="Subscription_edit_div" visible="false" runat="server">
+      <div class="row">
+        <div class="col-xl-10 order-xl-1">
+          <div class="card">
+            <div class="card-header">
+              <div class="row align-items-center">
+                <div class="col-10">
+                  <h3 class="mb-0">Add New Subscription</h3>
+                </div>
+                <div class="col-2 text-center">
+                    <asp:Button ID="btn_edit_back_to_sub_list" runat="server" class="btn btn-sm btn-primary" style="font-size : 14px;" Text="<< Back to list" CausesValidation="False" OnClick="btn_back_to_Subscription_list_Click"/>
+                </div>
+              </div>
+            </div>
+            <div class="card-body">
+              <div>
+                <h6 class="heading-small text-muted mb-4">Subscription Plan</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Subscription Name</label>
+                        <asp:TextBox ID="txt_edit_Subscription_Name" MaxLength="150" class="form-control" ValidationGroup="EditSubscriptionValidationGroup" placeholder="Enter Subscription Name" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator1"
+                              controltovalidate="txt_edit_Subscription_Name"
+                              validationgroup="EditSubscriptionValidationGroup"
+                              errormessage="Subscription Name is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Subscription Price (In ₹)</label>
+                        <asp:TextBox ID="txt_edit_Subscription_Price" MaxLength="10" class="form-control" TextMode="Number" ValidationGroup="EditSubscriptionValidationGroup" placeholder="Enter Subscription Price" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator7"
+                              controltovalidate="txt_edit_Subscription_Price"
+                              validationgroup="EditSubscriptionValidationGroup"
+                              errormessage="Price is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Subscription Type</label>
+                          <asp:DropDownList ID="drp_edit_Subscription_Type" validationgroup="EditSubscriptionValidationGroup" class="form-control" runat="server">
+                              <asp:ListItem>--Select--</asp:ListItem>
+                              <asp:ListItem>Monthly</asp:ListItem>
+                              <asp:ListItem>Quarterly</asp:ListItem>
+                              <asp:ListItem>Yearly</asp:ListItem>
+                          </asp:DropDownList>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator8"
+                              controltovalidate="drp_edit_Subscription_Type"
+                              validationgroup="EditSubscriptionValidationGroup"
+                              errormessage="Subscription Type is required." 
+                              InitialValue="--Select--"
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                  </div>                                                     
+              </div>
+                <hr />
+                <h6 class="heading-small text-muted mb-4">Subscription Description</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-12">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Description:</label>
+                        <asp:TextBox ID="txt_edit_Subscription_Description" MaxLength="150" TextMode="MultiLine" class="form-control" ValidationGroup="EditSubscriptionValidationGroup" placeholder="Enter Subscription Description" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator9"
+                              controltovalidate="txt_edit_Subscription_Description"
+                              validationgroup="EditSubscriptionValidationGroup"
+                              errormessage="Description Name is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                  </div>  
+                </div>
+                <hr />                
+                <h6 class="heading-small text-muted mb-4">Subscription Conditions</h6>
+                <div class="pl-lg-4">
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">No. Of Accesible Books</label>
+                        <asp:TextBox ID="txt_edit_Accesible_Books" MaxLength="150" class="form-control" ValidationGroup="EditSubscriptionValidationGroup" placeholder="Enter No. Of Accesible Books" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator10"
+                              controltovalidate="txt_edit_Accesible_Books"
+                              validationgroup="EditSubscriptionValidationGroup"
+                              errormessage="No Of Books is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Validity (No. Of Days)</label>
+                        <asp:TextBox ID="txt_edit_validity" MaxLength="10" class="form-control" TextMode="Number" ValidationGroup="EditSubscriptionValidationGroup" placeholder="Enter Subscription Price" runat="server"></asp:TextBox>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator11"
+                              controltovalidate="txt_edit_validity"
+                              validationgroup="EditSubscriptionValidationGroup"
+                              errormessage="Validity no. of days is required."
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="form-group">
+                        <label class="form-control-label" for="input-username">Subscription Tag</label>
+                          <asp:DropDownList ID="drp_edit_subscription_tag" validationgroup="EditSubscriptionValidationGroup" class="form-control" runat="server">
+                              <asp:ListItem>--Select--</asp:ListItem>
+                              <asp:ListItem>Best Selling</asp:ListItem>
+                              <asp:ListItem>Recommended</asp:ListItem>
+                              <asp:ListItem>Best Value</asp:ListItem>
+                          </asp:DropDownList>
+                          <asp:requiredfieldvalidator id="Requiredfieldvalidator12"
+                              controltovalidate="drp_edit_subscription_tag"
+                              validationgroup="EditSubscriptionValidationGroup"
+                              errormessage="Subscription Tag is required." 
+                              InitialValue="--Select--"
+                              class="validation_class"
+                              runat="Server">
+                            </asp:requiredfieldvalidator>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr class="my-4" />
+                <asp:Button ID="btn_edit_SubscriptionPlan" class="btn btn-primary" style="float: right;" validationgroup="EditSubscriptionValidationGroup" runat="server" Text="Update" OnClick="btn_edit_SubscriptionPlan_Click"/>                                                     
               </div>
             </div>
           </div>

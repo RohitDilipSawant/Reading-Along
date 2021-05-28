@@ -379,7 +379,7 @@
                 </div>
                 <hr class="my-4" />
                 <!-- Description -->
-                <h6 class="heading-small text-muted mb-4">Admin Secssion</h6>
+                <h6 class="heading-small text-muted mb-4">Admin Section</h6>
                 <div class="pl-lg-4">
                   <div class="row">
                     <div class="col-lg-4">

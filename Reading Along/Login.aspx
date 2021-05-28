@@ -43,7 +43,7 @@
 					
 					<div class="p-t-315 p-b-9">
 						<span class="txt1">
-							Username / Email 
+							Email 
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Username is required">
@@ -56,9 +56,9 @@
 							Password
 						</span>
 
-						<a href="#" class="txt2 bo1 m-l-5">
+						<%--<a href="#" class="txt2 bo1 m-l-5">
 							Forgot?
-						</a>
+						</a>--%>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
 						<asp:TextBox ID="txt_Pwd" class="input100" type="password" name="pass" runat="server"></asp:TextBox>
