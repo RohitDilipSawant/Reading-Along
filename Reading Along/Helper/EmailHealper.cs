@@ -21,7 +21,7 @@ namespace Reading_Along.Helper
 
                 using (SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtp.Credentials = new System.Net.NetworkCredential("sawantproject@gmail.com", "Ruhit@123");
+                    smtp.Credentials = new System.Net.NetworkCredential("sawantproject@gmail.com", "Earn@123");
                     smtp.EnableSsl = true;
                     smtp.Send(mail);
                 }

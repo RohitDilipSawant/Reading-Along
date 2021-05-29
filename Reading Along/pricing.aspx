@@ -38,7 +38,7 @@
 									</div>
 									<p class="prising_heading_p" style ="margin-top: 0px;"><%# Eval("SubscriptionDescription") %></p>
 									<div class="features">
-										<h4><span class="feature" style="font-size : 28px;"><%# Eval("NoOfBooksAccess") %></span></h4>
+										<h4>No of Books<span class="feature" style="font-size : 28px;"><%# Eval("NoOfBooksAccess") %></span></h4>
 										<h4><span class="feature">No Of Days</span> : <span class="value"><%# Eval("NoOfDays") %></span></h4>
 									</div>
 									<a href="SignUp.aspx" class="btn btn-block btn-outline-primary" style="background: #4dbe3b; color: #fff;" type="submit">Signup Now</a>
